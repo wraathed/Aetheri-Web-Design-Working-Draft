@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetheri Web Design - Services & Pricing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="hero-section hero-services">
+        <div class="hero-overlay"></div>
+        <nav class="main-nav container">
+    <div class="logo">
+        <a href="index.html">
+            <img src="assets/aetherilogo.png" alt="Aetheri Web Design Logo">
+        </a>
+    </div>
+
+    <!-- Wrapper for nav links and contact button -->
+    <div class="nav-right">
+        <ul class="nav-links">
+            <!-- Note: The active-nav class will still be on the correct page link -->
+            <li><a href="services.html" class="serv-btn">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a class="about-btn" href="about.html">About</a></li>
+        </ul>
+        <a href="contact.html" class="contact-btn">Let's Talk</a>
+    </div>
+    
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+</nav>
+        
+        <div class="hero-content container">
+            <h1>Our Services & Pricing</h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <div class="container">
+                <div class="pricing-header">
+                    <h2>Plans and Pricing</h2>
+                    <p>Flexible solutions designed to scale with your business. All plans are billed annually to save you money.</p>
+                    <div class="billing-toggle">
+                        <span class="toggle-option">Monthly</span>
+                        <span class="toggle-option active">Annual <span class="save-badge">Save 15%</span></span>
+                    </div>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Card 1: Website as a Service -->
+                    <div class="pricing-card">
+                        <!-- START: Added Wrappers -->
+                        <div class="card-main-info">
+                            <h3>Website as a Service</h3>
+                            <div class="price-tag">$299</div>
+                            <p class="price-term">Per month, billed annually</p>
+                            <p class="card-description">For new businesses & startups</p>
+                        </div>
+                        <div class="card-features-action">
+                            <ul class="features-list">
+                                <li><span class="checkmark">✓</span>Custom Website Design</li>
+                                <li><span class="checkmark">✓</span>Secure Hosting & Domain</li>
+                                <li><span class="checkmark">✓</span>Ongoing Maintenance & Support</li>
+                                <li><span class="checkmark">✓</span>Basic SEO Setup</li>
+                                <li><span class="checkmark">✓</span>Up to 5 Pages</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-outline">Get started with WaaS</a>
+                        </div>
+                        <!-- END: Added Wrappers -->
+                    </div>
+
+                    <!-- Card 2: SEO Growth (Popular) -->
+                    <div class="pricing-card popular">
+                        <div class="popular-tag">🔥 Popular</div>
+                        <!-- START: Added Wrappers -->
+                        <div class="card-main-info">
+                            <h3>SEO Growth</h3>
+                            <div class="price-tag">$189</div>
+                            <p class="price-term">Per month, billed annually</p>
+                            <p class="card-description">Great for growing businesses</p>
+                        </div>
+                        <div class="card-features-action">
+                            <ul class="features-list">
+                                <li><span class="checkmark">✓</span>Comprehensive SEO Audits</li>
+                                <li><span class="checkmark">✓</span>Keyword & Competitor Research</li>
+                                <li><span class="checkmark">✓</span>On-Page & Content Optimization</li>
+                                <li><span class="checkmark">✓</span>Link Building Campaign</li>
+                                <li><span class="checkmark">✓</span>Monthly Performance Reporting</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary">Choose Growth Plan</a>
+                        </div>
+                        <!-- END: Added Wrappers -->
+                    </div>
+
+                    <!-- Card 3: Custom Build (Enterprise) -->
+                    <div class="pricing-card dark-card">
+                        <!-- START: Added Wrappers -->
+                        <div class="card-main-info">
+                            <h3>Custom Site Build</h3>
+                            <div class="price-tag">Custom</div>
+                            <p class="price-term">Per project, billed in milestones</p>
+                            <p class="card-description">For multiple teams & enterprise needs</p>
+                        </div>
+                        <div class="card-features-action">
+                            <ul class="features-list">
+                                <li><span class="checkmark">✓</span>Everything in SEO Growth</li>
+                                <li><span class="checkmark">✓</span>Bespoke Ground-Up Development</li>
+                                <li><span class="checkmark">✓</span>Advanced Scalability Architecture</li>
+                                <li><span class="checkmark">✓</span>E-commerce & API Integrations</li>
+                                <li><span class="checkmark">✓</span>Dedicated Project Manager</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-light">Get started with Enterprise</a>
+                        </div>
+                        <!-- END: Added Wrappers -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="newsletter-section">
+                <h2>Join our newsletter and stay in the loop about the latest tech trends.</h2>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter Your Email">
+                    <button type="submit" class="btn btn-primary">SUBSCRIBE NOW!</button>
+                </form>
+                <div class="privacy-check">
+                    <input type="checkbox" id="privacy">
+                    <label for="privacy">*I have read the <a href="#">Privacy Policy</a> and agree to its terms.</label>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-contact">
+                    <div class="logo">Aetheri Web Design</div>
+                    <a href="mailto:contact@dotlogics.com">contact@aetheriwebdesign.com</a>
+                    <a href="#" class="btn btn-primary">Book a call →</a>
+                </div>
+                <div class="footer-locations">
+                    <h4>LOCATION</h4>
+                    <div class="locations-grid">
+                        <p>Columbus, Ohio</p>
+                    </div>
+                </div>
+                <div class="footer-connect">
+                    <h3>Let's<br>Work<br>Together.</h3>
+                    <div class="social-icons">
+                        <span>X</span>
+                        <span>in</span>
+                        <span>O</span>
+                        <span>NY</span>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">© 2025 Aetheri Web Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

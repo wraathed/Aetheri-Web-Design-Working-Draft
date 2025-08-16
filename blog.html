@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetheri Web Design - Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="hero-section hero-blog">
+        <div class="hero-overlay"></div>
+        <nav class="main-nav container">
+    <div class="logo">
+        <a href="index.html">
+            <img src="assets/aetherilogo.png" alt="Aetheri Web Design Logo">
+        </a>
+    </div>
+
+    <!-- Wrapper for nav links and contact button -->
+    <div class="nav-right">
+        <ul class="nav-links">
+            <!-- Note: The active-nav class will still be on the correct page link -->
+            <li><a href="services.html" class="serv-btn">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a class="about-btn" href="about.html">About</a></li>
+        </ul>
+        <a href="contact.html" class="contact-btn">Let's Talk</a>
+    </div>
+    
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+</nav>
+        
+        <div class="hero-content container">
+            <h1>Aetheri Insights</h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- Featured Post Section -->
+        <section class="featured-post-section">
+            <div class="container">
+                <div class="featured-post-layout">
+                    <div class="featured-image">
+                        <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Code on a screen">
+                    </div>
+                    <div class="featured-content">
+                        <span class="category">Web Development</span>
+                        <h2>The Rise of Headless CMS: A Developer's Perspective</h2>
+                        <p>Discover why decoupling your frontend from your backend is more than just a trend. We dive into the benefits of headless architecture, from enhanced performance to omnichannel content delivery.</p>
+                        <a href="#" class="btn btn-primary">Read Full Story</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Articles Section -->
+        <section class="latest-posts-section">
+            <div class="container">
+                <h2>Latest Articles</h2>
+                <!-- Reusing the articles-grid from the homepage for consistency -->
+                <div class="articles-grid">
+                    <!-- Article 1 -->
+                    <div class="article-card">
+                        <img src="https://images.pexels.com/photos/731175/pexels-photo-731175.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="City street with light trails">
+                        <div class="article-content">
+                            <span class="post-meta">SEO</span>
+                            <h4>A Roadmap For Retail Merchants: Building a UGC Strategy</h4>
+                            <p>Learn how user-generated content can skyrocket your SEO and build unbreakable brand loyalty.</p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <!-- Article 2 -->
+                    <div class="article-card">
+                        <img src="https://images.pexels.com/photos/163016/crash-test-collision-60-km-h-distraction-163016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Server room with blue lights">
+                        <div class="article-content">
+                            <span class="post-meta">E-commerce</span>
+                            <h4>Ecommerce Technology Stacks: 4 Things to Contemplate</h4>
+                            <p>Choosing the right tech is crucial. We break down the four key factors to consider before you build.</p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <!-- Article 3 -->
+                    <div class="article-card">
+                        <img src="https://images.pexels.com/photos/4057663/pexels-photo-4057663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Overhead view of a highway interchange">
+                        <div class="article-content">
+                             <span class="post-meta">B2B</span>
+                            <h4>How to Provide DTC-Style Experiences to Your B2B Buyers</h4>
+                             <p>The B2B landscape is changing. See how to apply direct-to-consumer strategies to win bigger clients.</p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <!-- Article 4 -->
+                    <div class="article-card">
+                        <img src="https://images.pexels.com/photos/270632/pexels-photo-270632.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="A person's hands typing on a laptop">
+                        <div class="article-content">
+                            <span class="post-meta">Web Design</span>
+                            <h4>Core Web Vitals: More Than Just Speed</h4>
+                            <p>We explore the three pillars of Core Web Vitals and why they are critical for user experience and rankings.</p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <!-- Article 5 -->
+                    <div class="article-card">
+                        <img src="https://images.pexels.com/photos/6238133/pexels-photo-6238133.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Magnifying glass over a chart">
+                        <div class="article-content">
+                            <span class="post-meta">Analytics</span>
+                            <h4>Beyond the Bounce Rate: Metrics That Truly Matter</h4>
+                            <p>Are you tracking the right data? Let's look at the analytics that provide actionable insights for growth.</p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <!-- Article 6 -->
+                    <div class="article-card">
+                        <img src="https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Multiple devices showing a responsive website">
+                        <div class="article-content">
+                            <span class="post-meta">Branding</span>
+                            <h4>Is Your Brand Voice Consistent Across All Channels?</h4>
+                            <p>A fragmented brand voice can confuse customers. Here's our guide to achieving seamless brand consistency.</p>
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <span class="prev disabled">← Previous</span>
+                    <a href="#" class="page-num active">1</a>
+                    <a href="#" class="page-num">2</a>
+                    <a href="#" class="page-num">3</a>
+                    <span class="ellipsis">...</span>
+                    <a href="#" class="page-num">8</a>
+                    <a href="#" class="next">Next →</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="newsletter-section">
+                <h2>Join our newsletter and stay in the loop about the latest tech trends.</h2>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter Your Email">
+                    <button type="submit" class="btn btn-primary">SUBSCRIBE NOW!</button>
+                </form>
+                <div class="privacy-check">
+                    <input type="checkbox" id="privacy">
+                    <label for="privacy">*I have read the <a href="#">Privacy Policy</a> and agree to its terms.</label>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-contact">
+                    <div class="logo">Aetheri Web Design</div>
+                    <a href="mailto:contact@dotlogics.com">contact@aetheriwebdesign.com</a>
+                    <a href="#" class="btn btn-primary">Book a call →</a>
+                </div>
+                <div class="footer-locations">
+                    <h4>LOCATION</h4>
+                    <div class="locations-grid">
+                        <p>Columbus, Ohio</p>
+                    </div>
+                </div>
+                <div class="footer-connect">
+                    <h3>Let's<br>Work<br>Together.</h3>
+                    <div class="social-icons">
+                        <span>X</span>
+                        <span>in</span>
+                        <span>O</span>
+                        <span>NY</span>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">© 2025 Aetheri Web Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

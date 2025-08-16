@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetheri Web Design - Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="hero-section hero-contact">
+        <div class="hero-overlay"></div>
+        <nav class="main-nav container">
+    <div class="logo">
+        <a href="index.html">
+            <img src="assets/aetherilogo.png" alt="Aetheri Web Design Logo">
+        </a>
+    </div>
+
+    <!-- Wrapper for nav links and contact button -->
+    <div class="nav-right">
+        <ul class="nav-links">
+            <!-- Note: The active-nav class will still be on the correct page link -->
+            <li><a href="services.html" class="serv-btn">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a class="about-btn" href="about.html">About</a></li>
+        </ul>
+        <a href="contact.html" class="contact-btn">Let's Talk</a>
+    </div>
+    
+    <!-- Hamburger Menu Button -->
+    <button class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+</nav>
+        
+        <div class="hero-content container">
+            <h1>Let's Start a Conversation</h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-layout">
+                    <!-- Left Side: Contact Form -->
+                    <div class="contact-form-wrapper">
+                        <h2>Send us a message</h2>
+                        <p>Have a project in mind or just want to say hello? Fill out the form below and we'll get back to you as soon as possible.</p>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Right Side: Contact Info -->
+                    <div class="contact-info-wrapper">
+                        <div class="info-block">
+                            <h3>Contact Details</h3>
+                            <p><strong>Email:</strong><br><a href="mailto:contact@aetheriwebdesign.com">contact@aetheriwebdesign.com</a></p>
+                            <p><strong>Phone:</strong><br><a href="tel:+16145550101">(614) 555-0101</a></p>
+                        </div>
+                        <div class="info-block">
+                            <h3>Our Location</h3>
+                            <p>123 Digital Avenue<br>Columbus, Ohio 43215<br>United States</p>
+                        </div>
+                        <div class="info-block">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday<br>9:00 AM - 5:00 PM (EST)</p>
+                        </div>
+                        <div class="info-block">
+                            <h3>Connect With Us</h3>
+                            <div class="social-icons">
+                                <span>X</span>
+                                <span>in</span>
+                                <span>O</span>
+                                <span>NY</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="newsletter-section">
+                <h2>Join our newsletter and stay in the loop about the latest tech trends.</h2>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter Your Email">
+                    <button type="submit" class="btn btn-primary">SUBSCRIBE NOW!</button>
+                </form>
+                <div class="privacy-check">
+                    <input type="checkbox" id="privacy">
+                    <label for="privacy">*I have read the <a href="#">Privacy Policy</a> and agree to its terms.</label>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-contact">
+                    <div class="logo">Aetheri Web Design</div>
+                    <a href="mailto:contact@dotlogics.com">contact@aetheriwebdesign.com</a>
+                    <a href="#" class="btn btn-primary">Book a call →</a>
+                </div>
+                <div class="footer-locations">
+                    <h4>LOCATION</h4>
+                    <div class="locations-grid">
+                        <p>Columbus, Ohio</p>
+                    </div>
+                </div>
+                <div class="footer-connect">
+                    <h3>Let's<br>Work<br>Together.</h3>
+                    <div class="social-icons">
+                        <span>X</span>
+                        <span>in</span>
+                        <span>O</span>
+                        <span>NY</span>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">© 2025 Aetheri Web Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
