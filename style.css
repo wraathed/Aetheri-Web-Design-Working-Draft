@@ -133,7 +133,7 @@ ul {
 /* --- Header & Hero Section --- */
 .hero-section {
     position: relative;
-    height: 70vh;
+    height: 100vh;
     min-height: 500px;
     background-image: url('assets/landing.png');
     background-size: cover;
@@ -495,7 +495,7 @@ ul {
 .ambitious-cta-section {
     position: relative;
     padding: 120px 0;
-    background-image: url('https://images.pexels.com/photos/3184431/pexels-photo-3184431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-image: url('assets/blurred-office.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Parallax effect */
@@ -642,9 +642,12 @@ ul {
     height: 60vh; /* Shorter hero for internal pages */
     min-height: 350px;
 }
+.hero-portfolio .hero-content h1 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem); /* FLUID FONT for all subpages */
+    padding-bottom: 5rem;
+}
 
 .hero-services .hero-content h1,
-.hero-portfolio .hero-content h1,
 .hero-contact .hero-content h1,
 .hero-blog .hero-content h1,
 .hero-about .hero-content h1 {
@@ -707,7 +710,7 @@ ul {
 .dark-card .checkmark { background-color: var(--primary-color); color: var(--dark-bg); width: 22px; height: 22px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; font-size: 0.8rem; }
 .btn-light { background-color: var(--white-color); color: var(--dark-bg); border: none; }
 .btn-light:hover { background-color: #e9e9e9; }
-.hero-portfolio { height: 45vh; min-height: 350px; background-image: url('https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); }
+.hero-portfolio { height: 70vh; min-height: 350px; background-image: url('assets/cityscape.png'); }
 .portfolio-section { padding: 100px 0; }
 .portfolio-filters { text-align: center; margin-bottom: 60px; }
 .filter-btn { background: #f0f0f5; border: 1px solid #e2e2e8; color: var(--dark-text); padding: 10px 25px; margin: 5px; border-radius: 20px; cursor: pointer; font-weight: 500; transition: all 0.3s ease; }
@@ -748,11 +751,28 @@ ul {
 .pagination .disabled { color: #aaa; border-color: #eee; }
 .pagination .ellipsis { border: none; }
 .hero-about { height: 45vh; min-height: 350px; background-image: url('https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); }
-.mission-section { padding: 100px 0; }
+.mission-section { 
+    padding: 100px 0;
+}
+
+.mission-section-index { 
+    padding: 100px 0;
+    background-color: var(--dark-bg);
+}
+.mission-section-index .two-col-layout { align-items: flex-start; gap: 80px; }
+.mission-statement-index h2 { font-size: 3rem; margin-bottom: 1rem; color: var(--white-color); }
+.mission-statement-index p { font-size: 1.5rem; color: var(--primary-color); font-weight: 500; line-height: 1.4; }
+.mission-description-index p { 
+    font-size: 1.1rem;
+    color: var(--light-gray-text);
+    padding-top: 4.5rem;
+}
+
 .mission-section .two-col-layout { align-items: flex-start; gap: 80px; }
 .mission-statement h2 { font-size: 3rem; margin-bottom: 1rem; color: var(--dark-text); }
 .mission-statement p { font-size: 1.5rem; color: var(--primary-color); font-weight: 500; line-height: 1.4; }
-.mission-description p { font-size: 1.1rem; color: #555; }
+.mission-description p { font-size: 1.1rem; color: #555; padding-top: 4.5rem; }
+
 .story-section { padding: 100px 0; background-color: var(--dark-bg); color: var(--white-color); }
 .story-section .section-header h2 { color: var(--white-color); }
 .story-section .section-header p { color: var(--light-gray-text); }
