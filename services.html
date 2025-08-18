@@ -15,31 +15,30 @@
     <header class="hero-section hero-services">
         <div class="hero-overlay"></div>
         <nav class="main-nav container">
-    <div class="logo">
-        <a href="index.html">
-            <img src="assets/aetherilogo.png" alt="Aetheri Web Design Logo">
-        </a>
-    </div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/aetherilogo.png" alt="Aetheri Web Design Logo">
+                </a>
+            </div>
 
-    <!-- Wrapper for nav links and contact button -->
-    <div class="nav-right">
-        <ul class="nav-links">
-            <!-- Note: The active-nav class will still be on the correct page link -->
-            <li><a href="services.html" class="serv-btn">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a class="about-btn" href="about.html">About</a></li>
-        </ul>
-        <a href="contact.html" class="contact-btn">Let's Talk</a>
-    </div>
-    
-    <!-- Hamburger Menu Button -->
-    <button class="hamburger-menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </button>
-</nav>
+            <!-- Wrapper for nav links and contact button -->
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="services.html" class="serv-btn active-nav">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a class="about-btn" href="about.html">About</a></li>
+                </ul>
+                <a href="contact.html" class="contact-btn">Let's Talk</a>
+            </div>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+        </nav>
         
         <div class="hero-content container">
             <h1>Our Services & Pricing</h1>
@@ -52,21 +51,25 @@
             <div class="container">
                 <div class="pricing-header">
                     <h2>Plans and Pricing</h2>
-                    <p>Flexible solutions designed to scale with your business. All plans are billed annually to save you money.</p>
+                    <p>Flexible solutions designed to scale with your business.</p>
                     <div class="billing-toggle">
-                        <span class="toggle-option">Monthly</span>
-                        <span class="toggle-option active">Annual <span class="save-badge">Save 15%</span></span>
+                        <span class="toggle-option active">Monthly</span>
+                        <span class="toggle-option">Annual <span class="save-badge">SAVE 17%</span></span>
                     </div>
                 </div>
 
                 <div class="pricing-grid">
                     <!-- Card 1: Website as a Service -->
-                    <div class="pricing-card">
-                        <!-- START: Added Wrappers -->
+                    <div class="pricing-card" data-plan="waas">
                         <div class="card-main-info">
                             <h3>Website as a Service</h3>
-                            <div class="price-tag">$299</div>
-                            <p class="price-term">Per month, billed annually</p>
+                            <!-- UPDATED PRICE STRUCTURE -->
+                            <div class="price-display" data-monthly-price="299">
+                                <span class="original-price"></span>
+                                <span class="current-price">$299</span>
+                                <span class="discount-badge">SAVE 17%</span>
+                            </div>
+                            <p class="price-term">Per month</p>
                             <p class="card-description">For new businesses & startups</p>
                         </div>
                         <div class="card-features-action">
@@ -77,41 +80,17 @@
                                 <li><span class="checkmark">✓</span>Basic SEO Setup</li>
                                 <li><span class="checkmark">✓</span>Up to 5 Pages</li>
                             </ul>
-                            <a href="contact.html" class="btn btn-outline">Get started with WaaS</a>
+                            <a href="waas.html" class="btn btn-outline">Get started with WaaS</a>
                         </div>
-                        <!-- END: Added Wrappers -->
-                    </div>
-
-                    <!-- Card 2: SEO Growth (Popular) -->
-                    <div class="pricing-card popular">
-                        <div class="popular-tag">🔥 Popular</div>
-                        <!-- START: Added Wrappers -->
-                        <div class="card-main-info">
-                            <h3>SEO Growth</h3>
-                            <div class="price-tag">$189</div>
-                            <p class="price-term">Per month, billed annually</p>
-                            <p class="card-description">Great for growing businesses</p>
-                        </div>
-                        <div class="card-features-action">
-                            <ul class="features-list">
-                                <li><span class="checkmark">✓</span>Comprehensive SEO Audits</li>
-                                <li><span class="checkmark">✓</span>Keyword & Competitor Research</li>
-                                <li><span class="checkmark">✓</span>On-Page & Content Optimization</li>
-                                <li><span class="checkmark">✓</span>Link Building Campaign</li>
-                                <li><span class="checkmark">✓</span>Monthly Performance Reporting</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary">Choose Growth Plan</a>
-                        </div>
-                        <!-- END: Added Wrappers -->
                     </div>
 
                     <!-- Card 3: Custom Build (Enterprise) -->
                     <div class="pricing-card dark-card">
-                        <!-- START: Added Wrappers -->
                         <div class="card-main-info">
                             <h3>Custom Site Build</h3>
-                            <div class="price-tag">Custom</div>
-                            <p class="price-term">Per project, billed in milestones</p>
+                            <p class="price-term-custom">Starting at</p>
+                            <div class="price-tag-custom">$1500+</div>
+                            <p class="price-term">One time</p>
                             <p class="card-description">For multiple teams & enterprise needs</p>
                         </div>
                         <div class="card-features-action">
@@ -122,13 +101,42 @@
                                 <li><span class="checkmark">✓</span>E-commerce & API Integrations</li>
                                 <li><span class="checkmark">✓</span>Dedicated Project Manager</li>
                             </ul>
-                            <a href="contact.html" class="btn btn-light">Get started with Enterprise</a>
+                            <a href="custom-build.html" class="btn btn-light">Get started with Enterprise</a>
                         </div>
-                        <!-- END: Added Wrappers -->
+                    </div>
+
+                    
+                    <!-- Card 2: SEO Growth (Popular)
+                    <div class="pricing-card popular" data-plan="seo-growth">
+                        <div class="popular-tag">🔥 Popular</div>
+                        <div class="card-main-info">
+                            <h3>SEO Growth</h3>
+                             UPDATED PRICE STRUCTURE
+                            <div class="price-display" data-monthly-price="190">
+                                <span class="original-price"></span>
+                                <span class="current-price">$190</span>
+                                <span class="discount-badge">SAVE 17%</span>
+                            </div>
+                            <p class="price-term">Per month</p>
+                            <p class="card-description">Great for growing businesses</p>
+                        </div>
+                        <div class="card-features-action">
+                            <ul class="features-list">
+                                <li><span class="checkmark">✓</span>Comprehensive SEO Audits</li>
+                                <li><span class="checkmark">✓</span>Keyword & Competitor Research</li>
+                                <li><span class="checkmark">✓</span>On-Page & Content Optimization</li>
+                                <li><span class="checkmark">✓</span>Link Building Campaign</li>
+                                <li><span class="checkmark">✓</span>Monthly Performance Reporting</li>
+                            </ul>
+                            <a href="seo.html" class="btn btn-primary">Choose Growth Plan</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+        -->
+
+
     </main>
     
     <!-- Footer Section -->
@@ -149,7 +157,7 @@
             <div class="footer-bottom">
                 <div class="footer-contact">
                     <div class="logo">Aetheri Web Design</div>
-                    <a href="mailto:contact@dotlogics.com">contact@aetheriwebdesign.com</a>
+                    <a href="mailto:contact@aetheriwebdesign.com">contact@aetheriwebdesign.com</a>
                     <a href="#" class="btn btn-primary">Book a call →</a>
                 </div>
                 <div class="footer-locations">

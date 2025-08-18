@@ -49,6 +49,12 @@ ul {
     padding: 0 20px;
 }
 
+.container-seo {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .container-nav {
     max-width: 1200px;
     margin: 0 auto;
@@ -135,7 +141,7 @@ ul {
     position: relative;
     height: 100vh;
     min-height: 500px;
-    background-image: url('assets/landing.png');
+    background-image: url('assets/landing-nature.png');
     background-size: cover;
     background-position: center;
     color: var(--white-color);
@@ -236,7 +242,7 @@ ul {
     font-size: clamp(2.5rem, 5vw, 3.5rem); /* FLUID FONT */
     font-weight: 700;
     max-width: 800px;
-    padding-bottom: 5rem;
+    padding-bottom: 10rem;
 }
 
 /* --- Full Service Section --- */
@@ -331,7 +337,40 @@ ul {
 }
 
 
-/* --- Building Brands Section --- */
+/* --- Our Process Section --- */
+.process-section {
+    padding: 100px 0;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
+
+.process-step .step-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #e0e0e0;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.process-step h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--dark-text);
+    margin-top: -15px;
+    position: relative;
+}
+
+.process-step p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* --- Building Brands Section (Restored) --- */
 .brands-section {
     padding: 100px 0;
 }
@@ -495,7 +534,7 @@ ul {
 .ambitious-cta-section {
     position: relative;
     padding: 120px 0;
-    background-image: url('assets/blurred-office.png');
+    background-image: url('assets/natureback.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Parallax effect */
@@ -639,7 +678,7 @@ ul {
 
 /* --- Services Page --- */
 .hero-services {
-    height: 60vh; /* Shorter hero for internal pages */
+    height: 70vh; /* Shorter hero for internal pages */
     min-height: 350px;
 }
 .hero-portfolio .hero-content h1 {
@@ -647,12 +686,20 @@ ul {
     padding-bottom: 5rem;
 }
 
-.hero-services .hero-content h1,
-.hero-contact .hero-content h1,
+.hero-services .hero-content h1 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem); /* FLUID FONT for all subpages */
+    padding-bottom: 5rem;
+}
+
+.hero-contact .hero-content h1 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem); /* FLUID FONT for all subpages */
+    padding-bottom: 5rem;
+}
+
 .hero-blog .hero-content h1,
 .hero-about .hero-content h1 {
     font-size: clamp(2.2rem, 5vw, 3.2rem); /* FLUID FONT for all subpages */
-    padding-bottom: 0;
+    padding-bottom: 5rem;
 }
 
 .pricing-section {
@@ -678,22 +725,58 @@ ul {
     margin-bottom: 30px;
 }
 
-/* --- (The rest of the CSS remains the same) --- */
-/* ... All other styles for pricing cards, portfolio, contact, blog, about, and responsive media queries follow ... */
-/* NOTE: The existing media queries will still work perfectly, but now they will be refining an already-fluid layout, making it even more robust. */
-
 .billing-toggle { display: inline-flex; background-color: #f0f0f5; border-radius: 20px; padding: 5px; border: 1px solid #e2e2e8; }
 .toggle-option { padding: 8px 20px; border-radius: 16px; cursor: pointer; font-weight: 500; color: #555; transition: all 0.3s ease; }
 .toggle-option.active { background-color: var(--white-color); color: var(--dark-text); box-shadow: 0 3px 8px rgba(0,0,0,0.08); }
 .save-badge { background-color: #e6f9f5; color: var(--primary-color); font-size: 0.8rem; padding: 3px 8px; border-radius: 8px; margin-left: 8px; font-weight: 600; }
 .pricing-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
-.pricing-card { background-color: var(--white-color); border: 1px solid #e9e9e9; border-radius: 16px; padding: 30px; display: flex; align-items: center; gap: 30px; text-align: left; transition: transform 0.3s, box-shadow 0.3s; }
+.pricing-card { background-color: var(--white-color); border: 1px solid #000000; border-radius: 16px; padding: 30px; display: flex; align-items: center; gap: 30px; text-align: left; transition: transform 0.3s, box-shadow 0.3s; }
 .card-main-info { flex: 1 1 35%; border-right: 1px solid #eee; padding-right: 30px; }
 .card-features-action { flex: 1 1 65%; display: flex; flex-direction: column; }
 .pricing-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.08); }
 .pricing-card h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; }
-.price-tag { font-size: 2.8rem; font-weight: 700; line-height: 1; margin-bottom: 4px; }
+
+
+/* --- NEW & UPDATED PRICING STYLES --- */
+.price-display {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns content to the start on larger screens */
+    gap: 12px; /* Space between elements */
+    margin-bottom: 4px;
+    min-height: 45px; /* Prevents layout shift during toggle */
+}
+
+.current-price {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.original-price {
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-decoration: line-through;
+    color: #999;
+    display: none; /* Hidden by default, shown via JS */
+}
+
+.discount-badge {
+    background-color: #e6f9f5;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: none; /* Hidden by default, shown via JS */
+    white-space: nowrap;
+}
+/* --- END OF NEW STYLES --- */
+
+
+.price-tag-custom { font-size: 2.8rem; font-weight: 700; line-height: 1; margin-bottom: 0px; }
 .price-term { font-size: 0.9rem; color: #666; font-weight: 400; margin-bottom: 20px; }
+.price-term-custom { font-size: 0.9rem; color: #666; font-weight: 400; margin-bottom: 5px; }
 .card-description { color: #333; font-weight: 600; margin-bottom: 0; border-top: none; padding-top: 0; }
 .features-list { list-style: none; margin-bottom: 30px; }
 .features-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
@@ -706,16 +789,29 @@ ul {
 .pricing-card.dark-card { background-color: var(--dark-bg); color: var(--white-color); border: none; }
 .dark-card .card-main-info { border-right-color: #444; }
 .dark-card h3, .dark-card .price-tag { color: var(--white-color); }
+.dark-card .current-price { color: var(--white-color); } /* Added for dark card compatibility */
 .dark-card .price-term, .dark-card p, .dark-card .features-list li { color: var(--light-gray-text); }
 .dark-card .checkmark { background-color: var(--primary-color); color: var(--dark-bg); width: 22px; height: 22px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; font-size: 0.8rem; }
 .btn-light { background-color: var(--white-color); color: var(--dark-bg); border: none; }
 .btn-light:hover { background-color: #e9e9e9; }
-.hero-portfolio { height: 70vh; min-height: 350px; background-image: url('assets/cityscape.png'); }
+.hero-portfolio { height: 70vh; min-height: 350px; 
+    background-image: url('assets/cityscape.png'); 
+    background-position: 50% 55%; /* This is the line you add */
+    background-size: cover; /* Also ensure you have this for best results */
+    background-repeat: no-repeat; /* Good practice to add this */
+}
 .portfolio-section { padding: 100px 0; }
 .portfolio-filters { text-align: center; margin-bottom: 60px; }
 .filter-btn { background: #f0f0f5; border: 1px solid #e2e2e8; color: var(--dark-text); padding: 10px 25px; margin: 5px; border-radius: 20px; cursor: pointer; font-weight: 500; transition: all 0.3s ease; }
 .filter-btn:hover, .filter-btn.active { background-color: var(--primary-color); color: var(--dark-bg); border-color: var(--primary-color); }
-.hero-contact { height: 45vh; min-height: 350px; background-image: url('https://images.pexels.com/photos/3747505/pexels-photo-3747505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); }
+.hero-contact { 
+    height: 70vh; 
+    min-height: 350px; 
+    background-image: url('assets/herocontact.jpg');
+    background-position: 50% 75%; /* This is the line you add */
+    background-size: cover; /* Also ensure you have this for best results */
+    background-repeat: no-repeat; /* Good practice to add this */
+}
 .contact-section { padding: 100px 0; background-color: #fcfcfd; }
 .contact-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 80px; align-items: start; }
 .contact-form-wrapper h2 { font-size: 2.5rem; margin-bottom: 1rem; }
@@ -734,7 +830,11 @@ ul {
 .info-block a:hover { color: var(--primary-color); }
 .contact-info-wrapper .social-icons span { background-color: #f0f0f5; border-color: #e2e2e8; color: var(--dark-text); }
 .contact-info-wrapper .social-icons span:hover { background-color: var(--primary-color); border-color: var(--primary-color); color: var(--dark-bg); }
-.hero-blog { height: 45vh; min-height: 350px; background-image: url('https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); }
+.hero-blog { height: 70vh; min-height: 350px; background-image: url('assets/heroblog.jpg'); 
+    background-position: 50% 75%; /* This is the line you add */
+    background-size: cover; /* Also ensure you have this for best results */
+    background-repeat: no-repeat; /* Good practice to add this */
+}
 .featured-post-section { padding: 100px 0; }
 .featured-post-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .featured-image img { width: 100%; border-radius: 16px; display: block; }
@@ -750,7 +850,7 @@ ul {
 .pagination a:hover, .pagination .active { background-color: var(--primary-color); border-color: var(--primary-color); color: var(--dark-bg); }
 .pagination .disabled { color: #aaa; border-color: #eee; }
 .pagination .ellipsis { border: none; }
-.hero-about { height: 45vh; min-height: 350px; background-image: url('https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); }
+.hero-about { height: 70vh; min-height: 350px; background-image: url('assets/heroabout.jpg'); }
 .mission-section { 
     padding: 100px 0;
 }
@@ -784,12 +884,213 @@ ul {
 .story-content h3 { font-size: 1.8rem; margin-bottom: 10px; }
 .story-content p { color: var(--light-gray-text); }
 .team-section { padding: 100px 0; }
-.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.team-grid { display: block; }
 .team-member-card { text-align: center; }
-.team-member-card img { width: 100%; height: 280px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; transition: transform 0.3s, box-shadow 0.3s; }
+.team-member-card img { width: auto; height: 280px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; transition: transform 0.3s, box-shadow 0.3s; }
 .team-member-card:hover img { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
 .team-member-info h4 { font-size: 1.3rem; margin-bottom: 5px; }
 .team-member-info span { color: var(--primary-color); font-weight: 500; }
+
+/* --- Service Detail Page Styles --- */
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-weight: 400;
+    color: var(--light-gray-text);
+    max-width: 600px;
+    margin: 1rem auto 0;
+    padding-bottom: 6rem;
+}
+
+.service-detail-section {
+    padding: 100px 0;
+}
+
+.service-intro {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 100px;
+}
+
+.intro-text h2 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    margin-bottom: 1.5rem;
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.key-details-card {
+    background-color: #fcfcfd;
+    border: 1px solid #e9e9e9;
+    border-radius: 16px;
+    padding: 30px;
+    position: sticky;
+    top: 40px;
+}
+
+.key-details-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-item {
+    margin-bottom: 20px;
+}
+
+.detail-title {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.detail-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+.detail-value-large {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+.detail-term {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.key-details-card .btn {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.inclusions-section .section-header {
+    margin-bottom: 60px;
+}
+
+.features-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.features-grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.features-grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.feature-card {
+    background-color: var(--white-color);
+    border: 1px solid #e9e9e9;
+    border-radius: 16px;
+    padding: 30px;
+}
+
+.feature-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+.feature-card .features-list li {
+    font-size: 1rem;
+}
+
+.ownership-section {
+    margin-top: 50px;
+    padding: 40px;
+    color: var(--white-color);
+    border-radius: 16px;
+}
+
+.ownership-section p {
+    color: var(--light-gray-text);
+    line-height: 1.7;
+}
+
+
+.exclusions-section {
+    margin-top: 100px;
+    padding: 80px 0;
+    background-color: #fcfcfd;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.exclusions-list {
+    max-width: 800px;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+.exclusions-list li {
+    background-color: #fff;
+    border: 1px solid #e9e9e9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.exclusions-list li span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #ffebe6;
+    color: #FF7043;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+.exclusions-list li strong {
+    color: var(--dark-text);
+}
+
+
+/* --- Responsive Adjustments for Service Detail Pages --- */
+@media (max-width: 992px) {
+    .service-intro {
+        grid-template-columns: 1fr;
+    }
+    .key-details-card {
+        position: static;
+        margin-top: 40px;
+    }
+    .features-grid.cols-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .features-grid.cols-2,
+    .features-grid.cols-3 {
+        grid-template-columns: 1fr;
+    }
+    .service-detail-section {
+        padding: 80px 0;
+    }
+    .service-intro {
+        margin-bottom: 80px;
+    }
+}
+
+
 
 @media (max-width: 992px) {
     .hamburger-menu { display: block; }
@@ -802,7 +1103,11 @@ ul {
     .hamburger-menu.toggle .bar:nth-child(2) { opacity: 0; }
     .hamburger-menu.toggle .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
     .articles-grid { grid-template-columns: repeat(2, 1fr); }
-    .brands-grid { grid-template-columns: 1fr; }
+    .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+    .brands-grid { grid-template-columns: 1fr; } /* Restored rule for brands */
     .partners-grid { grid-template-columns: repeat(3, 1fr); }
     .footer-bottom { grid-template-columns: 1fr 1.5fr; }
     .footer-connect { grid-column: 1 / -1; text-align: center; }
@@ -810,6 +1115,7 @@ ul {
     .social-icons { justify-content: center; }
     .pricing-card { flex-direction: column; align-items: stretch; gap: 25px; }
     .card-main-info { border-right: none; border-bottom: 1px solid #eee; padding-right: 0; padding-bottom: 25px; text-align: center; }
+    .price-display { justify-content: center; } /* Centers price elements on smaller screens */
     .dark-card .card-main-info { border-bottom-color: #444; }
     .card-features-action { align-items: center; }
     .pricing-card .btn { width: 100%; max-width: 300px; }
@@ -824,6 +1130,10 @@ ul {
     .service-description { max-width: 100%; }
     .help-header h3, .toggle-icon { font-size: 1.8rem; }
     .help-content p { font-size: 1rem; }
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
     .work-proud-content { flex-direction: column; gap: 20px; text-align: center;}
     .partners-grid { grid-template-columns: repeat(2, 1fr); }
     .newsletter-form { flex-direction: column; align-items: center; gap: 10px; }
