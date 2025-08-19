@@ -21,14 +21,20 @@
                 </a>
             </div>
             <div class="nav-right">
-                <ul class="nav-links">
-                    <li><a href="services.html" class="serv-btn active-nav">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a class="about-btn" href="about.html">About</a></li>
-                </ul>
-                <a href="contact.html" class="contact-btn">Let's Talk</a>
-            </div>
+        <ul class="nav-links">
+            <!-- Note: The active-nav class will still be on the correct page link -->
+            <li><a href="index.html" class="home-btn">Home</a></li>
+            <li><a href="services.html" class="serv-btn">Services</a></li>
+
+            <!-- <li><a href="portfolio.html">Portfolio</a></li> -->
+
+            <li><a href="blog.html">Blog</a></li>
+            <li><a class="about-btn" href="about.html">About</a></li>
+        </ul>
+        <a href="contact.html" class="contact-btn">Let's Talk</a>
+    </div>
+
+    <!-- hamburger menu for mobile -->
             <button class="hamburger-menu">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -48,13 +54,13 @@
                 <div class="service-intro">
                     <div class="intro-text">
                         <h2>Premium Managed Static Site Solution</h2>
-                        <p>This flagship package offers a comprehensive, hassle-free static web presence, ideal for businesses that want a professional website without the burden of managing hosting, maintenance, or updates themselves. We handle everything, so you can focus on your business.</p>
+                        <p>This flagship package offers a comprehensive, hassle-free static web presence, ideal for businesses that want a professional website without the burden of managing hosting, maintenance, or updates themselves. We handle everything, from setup to maintenance, so you can focus on your business.</p>
                     </div>
                     <div class="key-details-card">
                         <h3>Package at a Glance</h3>
                         <div class="detail-item">
                             <span class="detail-title">Pricing Model</span>
-                            <span class="detail-value-large">$300 / month</span>
+                            <span class="detail-value-large">$299 / month</span>
                         </div>
                         <div class="detail-item">
                             <span class="detail-title">Minimum Contract</span>
@@ -75,11 +81,11 @@
                             <h3>Custom Website Build & Design</h3>
                             <ul class="features-list">
                                 <li><span class="checkmark">✓</span>Discovery & Strategy Session</li>
-                                <li><span class="checkmark">✓</span>Bespoke Design & HTML/CSS Development</li>
+                                <li><span class="checkmark">✓</span>Bespoke Design & HTML/CSS/JS Development</li>
                                 <li><span class="checkmark">✓</span>Fully Responsive for All Devices</li>
                                 <li><span class="checkmark">✓</span>Up to 5 Core Pages (e.g., Home, About)</li>
                                 <li><span class="checkmark">✓</span>Essential Features (Forms, Maps, etc.)</li>
-                                <li><span class="checkmark">✓</span>Up to 3 Rounds of Design Revisions</li>
+                                <li><span class="checkmark">✓</span>Up to 2 Rounds of Design Revisions</li>
                             </ul>
                         </div>
                         <!-- Feature Card 2 -->
@@ -88,7 +94,7 @@
                             <ul class="features-list">
                                 <li><span class="checkmark">✓</span>High-Performance Premium Web Hosting</li>
                                 <li><span class="checkmark">✓</span>Free SSL Certificate for Security</li>
-                                <li><span class="checkmark">✓</span>Domain Name Registration & Renewal</li>
+                                <li><span class="checkmark">✓</span>Custom Domain Name Registration & Renewal</li>
                             </ul>
                         </div>
                         <!-- Feature Card 3 -->
@@ -98,7 +104,7 @@
                                 <li><span class="checkmark">✓</span>Regular Code Integrity & Performance Checks</li>
                                 <li><span class="checkmark">✓</span>Proactive Security Monitoring</li>
                                 <li><span class="checkmark">✓</span>Automated Daily Backups</li>
-                                <li><span class="checkmark">✓</span>24/7 Uptime Monitoring with Alerts</li>
+                                <li><span class="checkmark">✓</span>24/7 Uptime Monitoring</li>
                             </ul>
                         </div>
                         <!-- Feature Card 4 -->
@@ -139,7 +145,11 @@
                  <!-- Ownership Section -->
                  <div class="ownership-section">
                     <h3>Website Ownership & Termination</h3>
-                    <p>Clients have exclusive use of the custom-built website during the active subscription. Upon completion of the 6-month minimum contract, the service can be terminated with a 30-day written notice. The website design and code remain our intellectual property. However, if you wish to acquire the site files for independent hosting, a one-time buyout fee can be negotiated, granting you full ownership.</p>
+                    <p>Clients have exclusive use of the custom-built website during the active subscription. Upon completion of 
+                        the 6-month minimum contract, the service can be terminated with a 30-day written notice. After termination,
+                        the website design and code remain our intellectual property. However, if you wish to acquire the site 
+                        files for independent hosting, there is a one-time buyout fee, which grants you full ownership of the site
+                        and all of its code.</p>
                 </div>
 
             </div>
@@ -183,16 +193,26 @@
                     </div>
                 </div>
                 <div class="footer-connect">
-                    <h3>Let's<br>Work<br>Together.</h3>
-                    <div class="social-icons">
-                        <span>X</span>
-                        <span>in</span>
-                        <span>O</span>
-                        <span>NY</span>
-                    </div>
-                </div>
+    <h3>Let's<br>Work<br>Together.</h3>
+    <div class="social-icons">
+    <!-- X Link -->
+    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X">
+        <!-- SVG icon for X (formerly Twitter) -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+        </svg>
+    </a>
+    <!-- LinkedIn Link -->
+    <a href="https://www.linkedin.com/in/tyson-fitzgerald-6785801b5/" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on LinkedIn">
+        <!-- SVG icon for LinkedIn -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93-.94 0-1.62.61-1.62 1.93V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.38 1.02 3.38 3.54z"></path>
+        </svg>
+    </a>
+</div>
+</div>
             </div>
-            <p class="copyright">© 2025 Aetheri Web Design. All rights reserved.</p>
+            <p class="copyright">© 2025 Aetheri Web Design LLC. All rights reserved.</p>
         </div>
     </footer>
 
