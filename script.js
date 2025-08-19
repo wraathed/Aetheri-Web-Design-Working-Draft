@@ -29,112 +29,167 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    // --- START: UPDATED Pricing Toggle Functionality ---
+    // --- Pricing Toggle Functionality ---
     const billingToggle = document.querySelector('.billing-toggle');
 
     if (billingToggle) {
         const toggleOptions = billingToggle.querySelectorAll('.toggle-option');
         const priceCards = document.querySelectorAll('.pricing-card[data-plan]');
-        
-        // Price data for easy management. Add new plans here.
         const prices = {
             'waas': { monthly: 299, annual: 250 },
             'seo-growth': { monthly: 190, annual: 156 }
         };
 
-        // This function handles all visual updates to the price cards
         function updatePrices(isAnnual) {
             priceCards.forEach(card => {
                 const planName = card.dataset.plan;
-                if (!prices[planName]) return; // Skip if plan is not in our price data
-
-                // Select all the elements we need to change within the current card
+                if (!prices[planName]) return;
                 const originalPriceEl = card.querySelector('.original-price');
                 const currentPriceEl = card.querySelector('.current-price');
                 const discountBadgeEl = card.querySelector('.discount-badge');
                 const termEl = card.querySelector('.price-term');
-
                 if (isAnnual) {
-                    // --- ANNUAL VIEW ---
-                    // Set text content for the prices
                     originalPriceEl.textContent = `$${prices[planName].monthly}`;
                     currentPriceEl.textContent = `$${prices[planName].annual}`;
-                    
-                    // Change CSS display property to show the elements
                     originalPriceEl.style.display = 'inline';
                     discountBadgeEl.style.display = 'inline-block';
-                    
-                    // Update the billing term text
                     termEl.textContent = 'Per month, billed annually';
-
                 } else {
-                    // --- MONTHLY VIEW ---
-                    // Set text content for the current price
                     currentPriceEl.textContent = `$${prices[planName].monthly}`;
-
-                    // Change CSS display property to hide the extra elements
                     originalPriceEl.style.display = 'none';
                     discountBadgeEl.style.display = 'none';
-                    
-                    // Update the billing term text
                     termEl.textContent = 'Per month';
                 }
             });
         }
 
-        // Add click event listeners to the toggle buttons
         toggleOptions.forEach(option => {
             option.addEventListener('click', () => {
-                // Update the 'active' class on the toggle itself
                 toggleOptions.forEach(opt => opt.classList.remove('active'));
                 option.classList.add('active');
-
-                // Check which option is selected
                 const isAnnual = option.textContent.includes('Annual');
-                
-                // Call the main function to update all prices based on the selection
                 updatePrices(isAnnual);
             });
         });
     }
 
-    // --- NEW: Navigation Active State ---
+    // --- Navigation Active State ---
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('.nav-links a');
     const contactBtn = document.querySelector('.nav-right .contact-btn');
-
-    // Function to get the base name from a URL (e.g., 'services' from '/services.html')
     const getBaseName = (url) => {
         if (typeof url !== 'string' || !url) return '';
-        // Get the last part of the path and remove .html
         return url.substring(url.lastIndexOf('/') + 1).replace('.html', '');
     };
-    
     const currentPageBase = getBaseName(currentPath);
-
-    // Handle the main navigation links
     navLinks.forEach(link => {
         const linkHref = link.getAttribute('href');
         const linkBase = getBaseName(linkHref);
-
-        // Special case for homepage (index.html or root '/')
         if ((currentPageBase === 'index' || currentPageBase === '') && (linkBase === 'index' || linkBase === '')) {
             link.classList.add('active-nav');
-            return; // Stop this iteration
+            return;
         }
-        
-        // For other pages, check if the current page's base name includes the link's base name
-        // This makes 'service-detail' active for the 'services' link
         if (linkBase && currentPageBase.includes(linkBase)) {
             link.classList.add('active-nav');
         }
     });
-
-    // Handle the contact button separately because it has a different active class
     if (contactBtn) {
         const contactLinkBase = getBaseName(contactBtn.getAttribute('href'));
         if (contactLinkBase && currentPageBase.includes(contactLinkBase)) {
             contactBtn.classList.add('active-nav-btn');
         }
+    }
+
+
+    // --- NEW: BLOG PAGINATION & DYNAMIC POST LOADING ---
+    const articlesGrid = document.getElementById('articles-grid');
+    const paginationContainer = document.getElementById('pagination-container');
+
+    // Check if we are on the blog page by seeing if the grid element exists
+    if (articlesGrid && paginationContainer) {
+        let currentPage = 1;
+        const postsPerPage = 6; // You can change this number
+
+        function displayPosts(page) {
+            articlesGrid.innerHTML = '';
+            page--; // Adjust for zero-based array indexing
+
+            const start = postsPerPage * page;
+            const end = start + postsPerPage;
+            const paginatedPosts = postsData.slice(start, end);
+
+            paginatedPosts.forEach(post => {
+                const articleCard = document.createElement('div');
+                articleCard.className = 'article-card';
+
+                // Use the exact HTML structure from your original file
+                articleCard.innerHTML = `
+                    <img src="${post.thumbnail}" alt="${post.title}">
+                    <div class="article-content">
+                        <span class="post-meta">${post.category}</span>
+                        <h4>${post.title}</h4>
+                        <p>${post.description}</p>
+                        <!-- CHANGE IS HERE: Added index.html to the link -->
+                        <a href="posts/${post.slug}/index.html">Learn More</a>
+                    </div>
+                `;
+                articlesGrid.appendChild(articleCard);
+            });
+        }
+
+        function setupPagination() {
+            paginationContainer.innerHTML = '';
+            const pageCount = Math.ceil(postsData.length / postsPerPage);
+
+            // Previous Button
+            const prevButton = document.createElement('span');
+            prevButton.className = 'prev';
+            prevButton.innerHTML = '&larr; Previous';
+            if (currentPage === 1) {
+                prevButton.classList.add('disabled');
+            } else {
+                prevButton.addEventListener('click', () => {
+                    currentPage--;
+                    displayPosts(currentPage);
+                    setupPagination();
+                });
+            }
+            paginationContainer.appendChild(prevButton);
+
+            // Page Number Buttons
+            for (let i = 1; i <= pageCount; i++) {
+                const pageButton = document.createElement('a');
+                pageButton.className = 'page-num';
+                pageButton.innerText = i;
+                if (i === currentPage) {
+                    pageButton.classList.add('active');
+                }
+                pageButton.addEventListener('click', () => {
+                    currentPage = i;
+                    displayPosts(currentPage);
+                    setupPagination();
+                });
+                paginationContainer.appendChild(pageButton);
+            }
+
+            // Next Button
+            const nextButton = document.createElement('a');
+            nextButton.className = 'next';
+            nextButton.innerHTML = 'Next &rarr;';
+            if (currentPage === pageCount) {
+                nextButton.classList.add('disabled');
+            } else {
+                nextButton.addEventListener('click', () => {
+                    currentPage++;
+                    displayPosts(currentPage);
+                    setupPagination();
+                });
+            }
+            paginationContainer.appendChild(nextButton);
+        }
+
+        // Initial load
+        displayPosts(currentPage);
+        setupPagination();
     }
 });
