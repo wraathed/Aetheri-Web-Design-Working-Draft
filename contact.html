@@ -60,7 +60,7 @@
                         <p>Have a project in mind or just want to say hello? Fill out the form below and we'll get back to you ASAP.</p>
                         
                         <!-- ===================== THE ONLY CHANGE IS HERE ===================== -->
-                        <form class="contact-form" action="send_email.php" method="POST">
+                        <form class="contact-form" action="https://formspree.io/f/mpwlgrwj" method="POST">
                             <div class="form-group">
                                 <label for="name">Full Name</label>
                                 <input type="text" id="name" name="name" required>
@@ -77,6 +77,9 @@
                                 <label for="message">Your Message</label>
                                 <textarea id="message" name="message" rows="6" required></textarea>
                             </div>
+                            <!-- (Optional) Add this hidden field for a custom 'Thank You' page redirect -->
+                             <input type="hidden" name="_next" value="thank-you.html">
+
                             <button type="submit" class="btn btn-primary">Send Message</button>
                         </form>
                          <!-- ====================================================================== -->
