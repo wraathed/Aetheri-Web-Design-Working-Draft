@@ -16,13 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const header = item.querySelector('.help-header');
         if (header) {
             header.addEventListener('click', () => {
-                // Close other items
                 helpItems.forEach(otherItem => {
                     if (otherItem !== item && otherItem.classList.contains('active')) {
                         otherItem.classList.remove('active');
                     }
                 });
-                // Toggle the clicked item
                 item.classList.toggle('active');
             });
         }
@@ -73,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // --- Navigation Active State ---
+    // Navigation Active State 
     const currentPath = window.location.pathname;
     const navLinks = document.querySelectorAll('.nav-links a');
     const contactBtn = document.querySelector('.nav-right .contact-btn');
@@ -101,18 +99,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    // --- NEW: BLOG PAGINATION & DYNAMIC POST LOADING ---
+    // BLOG PAGINATION & DYNAMIC POST LOADING
     const articlesGrid = document.getElementById('articles-grid');
     const paginationContainer = document.getElementById('pagination-container');
 
-    // Check if we are on the blog page by seeing if the grid element exists
     if (articlesGrid && paginationContainer) {
         let currentPage = 1;
-        const postsPerPage = 6; // You can change this number
+        const postsPerPage = 6;
 
         function displayPosts(page) {
             articlesGrid.innerHTML = '';
-            page--; // Adjust for zero-based array indexing
+            page--;
 
             const start = postsPerPage * page;
             const end = start + postsPerPage;
@@ -122,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const articleCard = document.createElement('div');
                 articleCard.className = 'article-card';
 
-                // Use the exact HTML structure from your original file
+                
                 articleCard.innerHTML = `
                     <img src="${post.thumbnail}" alt="${post.title}">
                     <div class="article-content">
@@ -172,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 paginationContainer.appendChild(pageButton);
             }
 
-            // Next Button
+            // next button
             const nextButton = document.createElement('a');
             nextButton.className = 'next';
             nextButton.innerHTML = 'Next &rarr;';
@@ -188,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
             paginationContainer.appendChild(nextButton);
         }
 
-        // Initial load
+        // initial load
         displayPosts(currentPage);
         setupPagination();
     }

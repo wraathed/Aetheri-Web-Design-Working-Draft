@@ -24,7 +24,6 @@
     <!-- Wrapper for nav links and contact button -->
     <div class="nav-right">
         <ul class="nav-links">
-            <!-- Note: The active-nav class will still be on the correct page link -->
             <li><a href="index.html" class="home-btn">Home</a></li>
             <li><a href="services.html" class="serv-btn">Services</a></li>
 
@@ -59,7 +58,7 @@
                         <h2>Send us a message</h2>
                         <p>Have a project in mind or just want to say hello? Fill out the form below and we'll get back to you ASAP.</p>
                         
-                        <!-- ===================== THE ONLY CHANGE IS HERE ===================== -->
+
                         <form class="contact-form" action="https://formspree.io/f/mpwlgrwj" method="POST">
                             <div class="form-group">
                                 <label for="name">Full Name</label>
@@ -77,12 +76,10 @@
                                 <label for="message">Your Message</label>
                                 <textarea id="message" name="message" rows="6" required></textarea>
                             </div>
-                            <!-- (Optional) Add this hidden field for a custom 'Thank You' page redirect -->
                              <input type="hidden" name="_next" value="thank-you.html">
 
                             <button type="submit" class="btn btn-primary">Send Message</button>
                         </form>
-                         <!-- ====================================================================== -->
                     </div>
 
                     <!-- Right Side: Contact Info -->
@@ -148,7 +145,7 @@
     <div class="social-icons">
     <!-- X Link -->
     <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X">
-        <!-- SVG icon for X (formerly Twitter) -->
+        <!-- SVG icon for X -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
         </svg>
