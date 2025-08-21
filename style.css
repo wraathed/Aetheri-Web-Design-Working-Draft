@@ -1,4 +1,3 @@
-/* --- General Setup & Variables --- */
 :root {
     --dark-bg: #222328;
     --primary-color: #27d2a3;
@@ -15,7 +14,6 @@
     box-sizing: border-box;
 }
 
-/* FLUID FONT: Set a responsive root font size. All 'rem' units will now scale with the screen size. */
 html {
     font-size: clamp(14px, 1.2vw, 16px);
 }
@@ -24,9 +22,9 @@ body {
     font-family: var(--font-family);
     background-color: var(--white-color);
     color: var(--dark-text);
-    font-size: 1rem; /* FLUID FONT: Was 16px, now inherits the fluid size from html */
+    font-size: 1rem; 
     line-height: 1.6;
-    overflow-x: hidden; /* Prevents horizontal scroll from slide-out menu */
+    overflow-x: hidden; 
 }
 
 h1, h2, h3, h4 {
@@ -67,7 +65,7 @@ ul {
 }
 
 .section-header h2 {
-    font-size: clamp(2rem, 4vw, 2.5rem); /* FLUID FONT */
+    font-size: clamp(2rem, 4vw, 2.5rem); 
     margin-bottom: 1rem;
     color: var(--dark-text);
 }
@@ -78,7 +76,6 @@ ul {
     color: #666;
 }
 
-/* --- Buttons --- */
 .btn {
     display: inline-block;
     padding: 12px 28px;
@@ -90,7 +87,6 @@ ul {
     cursor: pointer;
 }
 
-/* Removed unnecessary padding */
 .about-btn, .serv-btn, .home-btn {
     padding-left: 0;
     padding-right: 0;
@@ -108,8 +104,8 @@ ul {
     border: 2px solid transparent;
     cursor: pointer;
     white-space: nowrap;
-    margin-left: 0; /* Removed fixed margin */
-    flex-shrink: 0; /* Prevent the button from shrinking */
+    margin-left: 0; 
+    flex-shrink: 0; 
 }
 
 .contact-btn:hover {
@@ -136,7 +132,6 @@ ul {
     color: var(--dark-bg);
 }
 
-/* --- Header & Hero Section --- */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -170,7 +165,7 @@ ul {
 }
 
 .logo {
-    flex-shrink: 0; /* Prevent logo from shrinking */
+    flex-shrink: 0; 
 }
 
 .logo img {
@@ -181,7 +176,7 @@ ul {
 }
 
 .nav-right {
-    flex-grow: 1; /* Allows this container to grow and fill empty space */
+    flex-grow: 1; 
     display: flex;
     align-items: center;
 }
@@ -189,12 +184,12 @@ ul {
 .nav-links {
     display: flex;
     gap: 60px;
-    margin: 0 auto; /* This centers the links within the available space of .nav-right */
+    margin: 0 auto; 
 }
 
 .nav-links a {
     font-weight: 500;
-    font-size: 1.05rem; /* ~17px on a 16px base, will scale down */
+    font-size: 1.05rem; 
     transition: color 0.3s;
 }
 
@@ -209,14 +204,13 @@ ul {
     color: var(--primary-color);
 }
 
-/* Hamburger menu styles (hidden on desktop) */
 .hamburger-menu {
     display: none;
     cursor: pointer;
     background: none;
     border: none;
     padding: 0;
-    z-index: 100; /* Ensure it's on top */
+    z-index: 100; 
 }
 
 .hamburger-menu .bar {
@@ -239,13 +233,12 @@ ul {
 }
 
 .hero-content h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem); /* FLUID FONT */
+    font-size: clamp(2.5rem, 5vw, 3.5rem); 
     font-weight: 700;
     max-width: 800px;
     padding-bottom: 10rem;
 }
 
-/* --- Full Service Section --- */
 .full-service-section {
     background-color: var(--dark-bg);
     color: var(--white-color);
@@ -260,7 +253,7 @@ ul {
 }
 
 .service-title h2 {
-    font-size: clamp(2rem, 5vw, 3rem); /* FLUID FONT */
+    font-size: clamp(2rem, 5vw, 3rem); 
     color: var(--primary-color);
     font-weight: 600;
 }
@@ -269,19 +262,18 @@ ul {
     max-width: 45%;
 }
 .service-description p {
-    font-size: clamp(1rem, 2vw, 1.2rem); /* FLUID FONT */
+    font-size: clamp(1rem, 2vw, 1.2rem); 
     margin-bottom: 30px;
     color: var(--light-gray-text);
 }
 
-/* --- How Can We Help Section --- */
 .help-section {
     background-color: var(--black-bg);
     color: var(--white-color);
     padding: 100px 0;
 }
 .help-section h2 {
-    font-size: clamp(1rem, 2vw, 1.2rem); /* FLUID FONT */
+    font-size: clamp(1rem, 2vw, 1.2rem); 
     font-weight: 400;
     color: var(--light-gray-text);
     margin-bottom: 40px;
@@ -300,45 +292,43 @@ ul {
     cursor: pointer;
 }
 .help-header h3 {
-    font-size: clamp(2rem, 5vw, 2.8rem); /* FLUID FONT */
+    font-size: clamp(2rem, 5vw, 2.8rem); 
     font-weight: 600;
 }
 .toggle-icon {
-    font-size: clamp(2rem, 5vw, 2.8rem); /* FLUID FONT */
+    font-size: clamp(2rem, 5vw, 2.8rem); 
     color: var(--primary-color);
     transition: transform 0.3s ease-in-out;
     transform-origin: center;
 }
 .help-content {
-    max-height: 0; /* Hidden by default */
+    max-height: 0; 
     overflow: hidden;
     transition: max-height 0.5s ease-out;
     color: var(--light-gray-text);
 }
 .help-content p {
     padding-top: 10px;
-    margin-bottom: 30px; /* Creates space between text and button */
-    font-size: clamp(1rem, 1.5vw, 1.1rem); /* FLUID FONT */
+    margin-bottom: 30px; 
+    font-size: clamp(1rem, 1.5vw, 1.1rem); 
     line-height: 1.7;
-    max-width: 90%; /* prevent text from touching the icon */
+    max-width: 90%; 
 }
 
 .help-content h1 {
     color:#eee
 }
 
-/* Active state for when the item is open */
 .help-item.active .help-content {
-    max-height: 400px; /* Increased to accommodate the new button */
-    padding-bottom: 30px; /* Space at the very bottom of the open container */
+    max-height: 400px; 
+    padding-bottom: 30px; 
     transition: max-height 0.5s ease-in;
 }
 .help-item.active .toggle-icon {
-    transform: rotate(45deg); /* Rotates '+' into a 'x' */
+    transform: rotate(45deg); 
 }
 
 
-/* --- Our Process Section --- */
 .process-section {
     padding: 100px 0;
 }
@@ -371,7 +361,6 @@ ul {
     line-height: 1.6;
 }
 
-/* --- Building Brands Section (Restored) --- */
 .brands-section {
     padding: 100px 0;
 }
@@ -414,7 +403,7 @@ ul {
 }
 
 .card-title-large {
-    font-size: clamp(3rem, 8vw, 5rem); /* FLUID FONT */
+    font-size: clamp(3rem, 8vw, 5rem); 
     font-weight: 800;
     display: block;
     line-height: 1;
@@ -427,7 +416,6 @@ ul {
 }
 
 
-/* --- Work Proud Section --- */
 .work-proud-section {
     background-color: var(--primary-color);
     padding: 60px 0;
@@ -439,10 +427,10 @@ ul {
     align-items: center;
 }
 .work-proud-content h3 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem); /* FLUID FONT */
+    font-size: clamp(1.8rem, 4vw, 2.5rem); 
 }
 .learn-more-link {
-    font-size: clamp(1rem, 2vw, 1.2rem); /* FLUID FONT */
+    font-size: clamp(1rem, 2vw, 1.2rem); 
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -465,7 +453,6 @@ ul {
     color: var(--primary-color);
 }
 
-/* --- Partners Section --- */
 .partners-section {
     background-color: var(--dark-bg);
     color: var(--white-color);
@@ -473,7 +460,7 @@ ul {
 }
 .partners-section .section-header h2 {
     color: var(--white-color);
-    font-size: clamp(1.5rem, 3vw, 2rem); /* FLUID FONT */
+    font-size: clamp(1.5rem, 3vw, 2rem); 
     max-width: 600px;
 }
 .partners-grid {
@@ -484,13 +471,12 @@ ul {
     align-items: center;
 }
 .partners-grid span {
-    font-size: clamp(1rem, 2.5vw, 1.5rem); /* FLUID FONT */
+    font-size: clamp(1rem, 2.5vw, 1.5rem); 
     font-weight: 600;
     color: #888;
     text-align: center;
 }
 
-/* --- Commerce Section --- */
 .commerce-section {
     padding: 100px 0;
 }
@@ -522,23 +508,22 @@ ul {
 }
 
 .article-content h4 {
-    font-size: clamp(1rem, 2vw, 1.2rem); /* FLUID FONT */
+    font-size: clamp(1rem, 2vw, 1.2rem); 
     margin-bottom: 10px;
 }
 .article-content a {
     color: var(--primary-color);
     font-weight: 600;
-    margin-top: auto; /* Pushes the link to the bottom */
+    margin-top: auto; 
 }
 
-/* --- Ambitious CTA Section --- */
 .ambitious-cta-section {
     position: relative;
     padding: 120px 0;
     background-image: url('assets/natureback.jpeg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Parallax effect */
+    background-attachment: fixed; 
     color: var(--white-color);
 }
 
@@ -558,12 +543,11 @@ ul {
 }
 
 .cta-content h2 {
-    font-size: clamp(2rem, 4vw, 2.8rem); /* FLUID FONT */
+    font-size: clamp(2rem, 4vw, 2.8rem); 
     max-width: 800px;
     margin: 0 auto 40px;
 }
 
-/* --- Footer --- */
 .main-footer {
     background-color: var(--dark-bg);
     color: var(--white-color);
@@ -577,7 +561,7 @@ ul {
 }
 
 .newsletter-section h2 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem); /* FLUID FONT */
+    font-size: clamp(1.8rem, 4vw, 2.5rem); 
     max-width: 900px;
     margin: 0 auto 40px;
 }
@@ -600,7 +584,7 @@ ul {
 
 .newsletter-form button {
     border-radius: 0 30px 30px 0;
-    margin-left: -2px; /* Overlap border */
+    margin-left: -2px; 
 }
 
 .privacy-check {
@@ -646,7 +630,7 @@ ul {
 }
 
 .footer-connect h3 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem); /* FLUID FONT */
+    font-size: clamp(1.8rem, 4vw, 2.5rem); 
     font-weight: 600;
     line-height: 1.1;
     margin-bottom: 30px;
@@ -677,29 +661,28 @@ ul {
     font-size: 0.9rem;
 }
 
-/* --- Services Page --- */
 .hero-services {
-    height: 70vh; /* Shorter hero for internal pages */
+    height: 70vh; 
     min-height: 350px;
 }
 .hero-portfolio .hero-content h1 {
-    font-size: clamp(2.2rem, 5vw, 3.2rem); /* FLUID FONT for all subpages */
+    font-size: clamp(2.2rem, 5vw, 3.2rem); 
     padding-bottom: 5rem;
 }
 
 .hero-services .hero-content h1 {
-    font-size: clamp(2.2rem, 5vw, 3.2rem); /* FLUID FONT for all subpages */
+    font-size: clamp(2.2rem, 5vw, 3.2rem); 
     padding-bottom: 5rem;
 }
 
 .hero-contact .hero-content h1 {
-    font-size: clamp(2.2rem, 5vw, 3.2rem); /* FLUID FONT for all subpages */
+    font-size: clamp(2.2rem, 5vw, 3.2rem); 
     padding-bottom: 5rem;
 }
 
 .hero-blog .hero-content h1,
 .hero-about .hero-content h1 {
-    font-size: clamp(2.2rem, 5vw, 3.2rem); /* FLUID FONT for all subpages */
+    font-size: clamp(2.2rem, 5vw, 3.2rem); 
     padding-bottom: 5rem;
 }
 
@@ -715,7 +698,7 @@ ul {
 }
 
 .pricing-header h2 {
-    font-size: clamp(2rem, 5vw, 2.8rem); /* FLUID FONT */
+    font-size: clamp(2rem, 5vw, 2.8rem); 
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -738,14 +721,13 @@ ul {
 .pricing-card h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; }
 
 
-/* --- NEW & UPDATED PRICING STYLES --- */
 .price-display {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Aligns content to the start on larger screens */
-    gap: 12px; /* Space between elements */
+    justify-content: flex-start; 
+    gap: 12px; 
     margin-bottom: 4px;
-    min-height: 45px; /* Prevents layout shift during toggle */
+    min-height: 45px; 
 }
 
 .current-price {
@@ -759,7 +741,7 @@ ul {
     font-weight: 500;
     text-decoration: line-through;
     color: #999;
-    display: none; /* Hidden by default, shown via JS */
+    display: none; 
 }
 
 .discount-badge {
@@ -769,10 +751,9 @@ ul {
     padding: 4px 10px;
     border-radius: 8px;
     font-weight: 600;
-    display: none; /* Hidden by default, shown via JS */
+    display: none; 
     white-space: nowrap;
 }
-/* --- END OF NEW STYLES --- */
 
 
 .price-tag-custom { font-size: 2.8rem; font-weight: 700; line-height: 1; margin-bottom: 0px; }
@@ -796,16 +777,16 @@ ul {
 .pricing-card.dark-card { background-color: var(--dark-bg); color: var(--white-color); border: none; }
 .dark-card .card-main-info { border-right-color: #444; }
 .dark-card h3, .dark-card .price-tag { color: var(--white-color); }
-.dark-card .current-price { color: var(--white-color); } /* Added for dark card compatibility */
+.dark-card .current-price { color: var(--white-color); } 
 .dark-card .price-term, .dark-card p, .dark-card .features-list li { color: var(--light-gray-text); }
 .dark-card .checkmark { background-color: var(--primary-color); color: var(--dark-bg); width: 22px; height: 22px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; font-size: 0.8rem; }
 .btn-light { background-color: var(--white-color); color: var(--dark-bg); border: none; }
 .btn-light:hover { background-color: #e9e9e9; }
 .hero-portfolio { height: 70vh; min-height: 350px; 
     background-image: url('assets/cityscape.png'); 
-    background-position: 50% 55%; /* This is the line you add */
-    background-size: cover; /* Also ensure you have this for best results */
-    background-repeat: no-repeat; /* Good practice to add this */
+    background-position: 50% 55%; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
 }
 .portfolio-section { padding: 100px 0; }
 .portfolio-filters { text-align: center; margin-bottom: 60px; }
@@ -815,9 +796,9 @@ ul {
     height: 70vh; 
     min-height: 350px; 
     background-image: url('assets/herocontact.jpg');
-    background-position: 50% 75%; /* This is the line you add */
-    background-size: cover; /* Also ensure you have this for best results */
-    background-repeat: no-repeat; /* Good practice to add this */
+    background-position: 50% 75%; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
 }
 .contact-section { padding: 100px 0; background-color: #fcfcfd; }
 .contact-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 80px; align-items: start; }
@@ -838,9 +819,9 @@ ul {
 .contact-info-wrapper .social-icons span { background-color: #f0f0f5; border-color: #e2e2e8; color: var(--dark-text); }
 .contact-info-wrapper .social-icons span:hover { background-color: var(--primary-color); border-color: var(--primary-color); color: var(--dark-bg); }
 .hero-blog { height: 70vh; min-height: 350px; background-image: url('assets/heroblog.jpg'); 
-    background-position: 50% 75%; /* This is the line you add */
-    background-size: cover; /* Also ensure you have this for best results */
-    background-repeat: no-repeat; /* Good practice to add this */
+    background-position: 50% 75%; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
 }
 .featured-post-section { padding: 100px 0; }
 .featured-post-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -880,7 +861,6 @@ ul {
 .mission-statement p { font-size: 1.5rem; color: var(--primary-color); font-weight: 500; line-height: 1.4; }
 .mission-description p { font-size: 1.1rem; color: #555; padding-top: 4.5rem; }
 
-/* --- Philosophy Section (Replaces Story Section) --- */
 .philosophy-section {
     padding: 100px 0;
     background-color: var(--dark-bg);
@@ -897,16 +877,15 @@ ul {
 
 .philosophy-grid {
     display: grid;
-    /* This creates a responsive grid that shows 2 columns on most screens and 1 on smaller screens */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-top: 60px; /* Aligns with section-header margin-bottom */
+    margin-top: 60px; 
 }
 
 .philosophy-card {
-    background-color: #2c2d32; /* A slightly lighter shade than the main dark background */
+    background-color: #2c2d32; 
     padding: 40px;
-    border-radius: 16px; /* Matches other cards on the site */
+    border-radius: 16px; 
     border: 1px solid #444;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
@@ -936,7 +915,6 @@ ul {
 .team-member-info-index h4 { font-size: 1.3rem; margin-bottom: 5px; color: var(--white-color); padding-top: 9px;}
 .team-member-info-index span { color: var(--primary-color); font-weight: 500; }
 
-/* --- Service Detail Page Styles --- */
 .hero-subtitle {
     font-size: clamp(1.1rem, 2vw, 1.3rem);
     font-weight: 400;
@@ -1111,38 +1089,33 @@ ul {
     color: var(--dark-text);
 }
 
-/* This new grid layout replaces the old two-column flex layout for this specific section */
 .mission-layout-with-image {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* The image takes 1 part, the text content takes 2 parts */
-    gap: 80px;                       /* Space between the image and text */
-    align-items: center;             /* Vertically aligns the image with the text block */
+    grid-template-columns: 1fr 2fr; 
+    gap: 80px;                       
+    align-items: center;             
 }
 
-/* A wrapper to style the image container */
 .mission-image-wrapper img {
     width: 100%;
     height: auto;
-    display: block;                  /* Removes extra space below the image */
-    border-radius: 12px;             /* Adds soft, rounded corners to the image */
-    max-width: 400px;                /* Prevents the image from getting too large */
-    margin: 0 auto;                  /* Centers the image in its column if it's smaller than the column width */
+    display: block;                  
+    border-radius: 12px;             
+    max-width: 400px;                
+    margin: 0 auto;                  
 }
 
-/* This class groups your original mission statement and description together */
 .mission-text-content {
     display: flex;
     flex-direction: column;
 }
 
-/* We target the description inside the new layout to adjust the spacing between the heading and paragraph */
 .mission-layout-with-image .mission-description-index {
     padding-top: 0rem;
 }
 
-/* --- Footer Social Icons (Updated for SVG) --- */
 .footer-connect h3 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem); /* FLUID FONT */
+    font-size: clamp(1.8rem, 4vw, 2.5rem); 
     font-weight: 600;
     line-height: 1.1;
     margin-bottom: 30px;
@@ -1151,36 +1124,39 @@ ul {
 .social-icons {
     display: flex;
     gap: 15px;
-    justify-content: flex-start; /* Aligns icons to the start */
+    justify-content: flex-start; 
 }
 
-/* This styles the link (<a> tag) itself into a circular button */
 .social-icons a {
-    display: flex; /* This is key to centering the icon inside */
+    display: flex; 
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: 1px solid var(--primary-color);
-    color: var(--white-color); /* The SVG will inherit this color */
+    color: var(--white-color); 
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* This styles the SVG icon inside the link */
 .social-icons a svg {
-    width: 20px;  /* Adjust size of the icon inside the circle */
+    width: 20px;  
     height: 20px;
-    fill: currentColor; /* Magic property! The SVG uses the color of its parent (the <a> tag) */
+    fill: currentColor; 
 }
 
-/* This handles the hover effect */
 .social-icons a:hover {
     background-color: var(--primary-color);
-    color: var(--dark-bg); /* Because of "fill: currentColor", the SVG will now turn dark */
+    color: var(--dark-bg); 
 }
 
-/* On mobile, you have a rule to center social icons. We'll update it. */
+.service-highlight-title {
+    font-size: 2em; 
+    font-weight: bold;
+    margin-bottom: 0.5em; 
+    line-height: 1.2;
+}
+
 @media (max-width: 992px) {
     .footer-connect { 
         grid-column: 1 / -1; 
@@ -1194,17 +1170,15 @@ ul {
     }
 }
 
-/* --- Responsive Styles for the New Section --- */
 @media (max-width: 992px) {
     .mission-layout-with-image {
-        grid-template-columns: 1fr; /* Stacks the image on top of the text */
+        grid-template-columns: 1fr; 
         gap: 50px;
         text-align: center;
     }
 }
 
 
-/* --- Responsive Adjustments for Service Detail Pages --- */
 @media (max-width: 992px) {
     .service-intro {
         grid-template-columns: 1fr;
@@ -1248,7 +1222,7 @@ ul {
         grid-template-columns: repeat(3, 1fr);
         gap: 40px;
     }
-    .brands-grid { grid-template-columns: 1fr; } /* Restored rule for brands */
+    .brands-grid { grid-template-columns: 1fr; } 
     .partners-grid { grid-template-columns: repeat(3, 1fr); }
     .footer-bottom { grid-template-columns: 1fr 1.5fr; }
     .footer-connect { grid-column: 1 / -1; text-align: center; }
@@ -1256,7 +1230,7 @@ ul {
     .social-icons { justify-content: center; }
     .pricing-card { flex-direction: column; align-items: stretch; gap: 25px; }
     .card-main-info { border-right: none; border-bottom: 1px solid #eee; padding-right: 0; padding-bottom: 25px; text-align: center; }
-    .price-display { justify-content: center; } /* Centers price elements on smaller screens */
+    .price-display { justify-content: center; } 
     .dark-card .card-main-info { border-bottom-color: #444; }
     .card-features-action { align-items: center; }
     .pricing-card .btn { width: 100%; max-width: 300px; }
@@ -1293,26 +1267,12 @@ ul {
     .team-member-card img { height: auto; max-width: 280px; }
 }
 
-/* --- Centering the last philosophy card on wider screens --- */
 @media (min-width: 1024px) {
-    /*
-     * On larger screens, we explicitly set the grid to 3 columns.
-     * This overrides the 'auto-fit' behavior and gives us predictable column lines.
-    */
     .philosophy-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /*
-     * This selector is very specific:
-     * It targets the 4th philosophy card, ONLY if it is also the LAST card in the grid.
-     * This prevents the rule from affecting layouts with 5 or more cards.
-    */
     .philosophy-card:nth-child(4):last-child {
-        /* 
-         * This tells the card to start on the 2nd grid column line and end on the 3rd.
-         * In a 3-column grid, this places it squarely in the middle column.
-        */
         grid-column: 2 / 3;
     }
 }
