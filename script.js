@@ -189,4 +189,51 @@ document.addEventListener('DOMContentLoaded', function () {
         displayPosts(currentPage);
         setupPagination();
     }
+
+    // --- NEW: Dynamically Update Featured Blog Post ---
+    function updateFeaturedPost() {
+        const featuredImage = document.getElementById('featured-image-src');
+        const featuredCategory = document.getElementById('featured-category');
+        const featuredTitle = document.getElementById('featured-title');
+        const featuredDescription = document.getElementById('featured-description');
+        const featuredLink = document.getElementById('featured-link');
+
+        // Check if the postsData array exists and has posts
+        if (typeof postsData !== 'undefined' && postsData.length > 0) {
+            
+            // Sort posts by date in descending order (newest first)
+            const sortedPosts = [...postsData].sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            // The first post in the sorted array is the latest one
+            const latestPost = sortedPosts[0];
+
+            // Update the HTML elements with the latest post's data
+            if (featuredImage) {
+                featuredImage.src = latestPost.thumbnail;
+                featuredImage.alt = latestPost.title; 
+            }
+            if (featuredCategory) {
+                featuredCategory.textContent = latestPost.category;
+            }
+            if (featuredTitle) {
+                featuredTitle.textContent = latestPost.title;
+            }
+            if (featuredDescription) {
+                featuredDescription.textContent = latestPost.description;
+            }
+            if (featuredLink) {
+                // Constructing the link just like in your pagination logic
+                featuredLink.href = `posts/${latestPost.slug}/index.html`;
+            }
+        } else {
+            // Optional: Hide the section or show a message if no posts are available
+            const featuredSection = document.querySelector('.featured-post-section');
+            if(featuredSection) {
+                featuredSection.style.display = 'none';
+            }
+        }
+    }
+
+    // Call the new function to update the featured post on page load
+    updateFeaturedPost();
 });
