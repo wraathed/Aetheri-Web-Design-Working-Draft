@@ -126,7 +126,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         <span class="post-meta">${post.category}</span>
                         <h4>${post.title}</h4>
                         <p>${post.description}</p>
-                        <!-- CHANGE IS HERE: Added index.html to the link -->
                         <a href="posts/${post.slug}/index.html">Read Post</a>
                     </div>
                 `;
