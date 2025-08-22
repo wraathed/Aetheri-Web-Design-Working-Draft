@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <h4>${post.title}</h4>
                         <p>${post.description}</p>
                         <!-- CHANGE IS HERE: Added index.html to the link -->
-                        <a href="posts/${post.slug}/index.html">Learn More</a>
+                        <a href="posts/${post.slug}/index.html">Read Post</a>
                     </div>
                 `;
                 articlesGrid.appendChild(articleCard);
