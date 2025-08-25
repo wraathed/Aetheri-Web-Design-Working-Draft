@@ -755,7 +755,7 @@ ul {
     white-space: nowrap;
 }
 
-
+.down-payment { font-size: 0.9rem; color: var(--primary-color); font-weight: 800; margin-bottom: 20px;}
 .price-tag-custom { font-size: 2.8rem; font-weight: 700; line-height: 1; margin-bottom: 0px; }
 .price-term { font-size: 0.9rem; color: #666; font-weight: 400; margin-bottom: 20px; }
 .price-term-custom { font-size: 0.9rem; color: #666; font-weight: 400; margin-bottom: 5px; }
@@ -765,6 +765,7 @@ ul {
 .checkmark { color: var(--primary-color); font-weight: bold; font-size: 1.2rem; }
 .divider { color: var(--dark-bg); font-weight: lighter; font-size: 0.8rem; }
 .point { color: var(--dark-bg); font-weight: lighter; font-size: 1.3rem; }
+.point-custom { color: var(--white-color); font-weight: lighter; font-size: 1.3rem; }
 .subpoint {
     padding-left: 25px;
 }
