@@ -1,4 +1,4 @@
-// --- Mobile Navigation (Hamburger Menu) ---
+// --- mobile nav (Hamburger Menu) ---
 const hamburger = document.querySelector('.hamburger-menu');
 const navRight = document.querySelector('.nav-right');
 
@@ -9,7 +9,7 @@ hamburger.addEventListener('click', () => {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    // --- Accordion for "How Can We Help?" Section ---
+    // --- Accordion for How Can We Help Section ---
     const helpItems = document.querySelectorAll('.help-item');
 
     helpItems.forEach(item => {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const toggleOptions = billingToggle.querySelectorAll('.toggle-option');
         const priceCards = document.querySelectorAll('.pricing-card[data-plan]');
         const prices = {
-            'waas': { monthly: 299, annual: 250 },
+            'waas': { monthly: 275, annual: 229 },
             'seo-growth': { monthly: 190, annual: 156 }
         };
 
@@ -137,7 +137,6 @@ document.addEventListener('DOMContentLoaded', function () {
             paginationContainer.innerHTML = '';
             const pageCount = Math.ceil(postsData.length / postsPerPage);
 
-            // Previous Button
             const prevButton = document.createElement('span');
             prevButton.className = 'prev';
             prevButton.innerHTML = '&larr; Previous';
@@ -152,7 +151,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             paginationContainer.appendChild(prevButton);
 
-            // Page Number Buttons
             for (let i = 1; i <= pageCount; i++) {
                 const pageButton = document.createElement('a');
                 pageButton.className = 'page-num';
@@ -168,7 +166,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 paginationContainer.appendChild(pageButton);
             }
 
-            // next button
             const nextButton = document.createElement('a');
             nextButton.className = 'next';
             nextButton.innerHTML = 'Next &rarr;';
@@ -189,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setupPagination();
     }
 
-    // --- NEW: Dynamically Update Featured Blog Post ---
+    // --- Dynamically Update Featured Blog Post ---
     function updateFeaturedPost() {
         const featuredImage = document.getElementById('featured-image-src');
         const featuredCategory = document.getElementById('featured-category');
@@ -197,16 +194,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const featuredDescription = document.getElementById('featured-description');
         const featuredLink = document.getElementById('featured-link');
 
-        // Check if the postsData array exists and has posts
         if (typeof postsData !== 'undefined' && postsData.length > 0) {
             
-            // Sort posts by date in descending order (newest first)
             const sortedPosts = [...postsData].sort((a, b) => new Date(b.date) - new Date(a.date));
             
-            // The first post in the sorted array is the latest one
             const latestPost = sortedPosts[0];
 
-            // Update the HTML elements with the latest post's data
             if (featuredImage) {
                 featuredImage.src = latestPost.thumbnail;
                 featuredImage.alt = latestPost.title; 
@@ -221,11 +214,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 featuredDescription.textContent = latestPost.description;
             }
             if (featuredLink) {
-                // Constructing the link just like in your pagination logic
                 featuredLink.href = `posts/${latestPost.slug}/index.html`;
             }
         } else {
-            // Optional: Hide the section or show a message if no posts are available
             const featuredSection = document.querySelector('.featured-post-section');
             if(featuredSection) {
                 featuredSection.style.display = 'none';
@@ -233,6 +224,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Call the new function to update the featured post on page load
     updateFeaturedPost();
 });
