@@ -59,6 +59,12 @@ ul {
     padding: 0 20px;
 }
 
+.blog-container-h3 {
+    padding-bottom: 15px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 60px;
