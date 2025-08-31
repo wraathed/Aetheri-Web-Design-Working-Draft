@@ -120,14 +120,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 const articleCard = document.createElement('div');
                 articleCard.className = 'article-card';
 
-                
+                // Use root-relative paths for images and links
                 articleCard.innerHTML = `
-                    <img src="${post.thumbnail}" alt="${post.title}">
+                    <img src="/${post.thumbnail}" alt="${post.title}">
                     <div class="article-content">
                         <span class="post-meta">${post.category}</span>
                         <h4>${post.title}</h4>
                         <p>${post.description}</p>
-                        <a href="posts/${post.slug}/index.html">Read Post</a>
+                        <a href="/posts/${post.slug}/index.html">Read Post</a>
                     </div>
                 `;
                 articlesGrid.appendChild(articleCard);
@@ -195,13 +195,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const articleCard = document.createElement('div');
             articleCard.className = 'article-card';
 
+            // Use root-relative paths for images and links
             articleCard.innerHTML = `
-                <img src="${post.thumbnail}" alt="${post.title}">
+                <img src="/${post.thumbnail}" alt="${post.title}">
                 <div class="article-content">
                     <span class="post-meta">${post.category}</span>
                     <h4>${post.title}</h4>
                     <p>${post.description}</p>
-                    <a href="posts/${post.slug}/index.html">Read Post</a>
+                    <a href="/posts/${post.slug}/index.html">Read Post</a>
                 </div>
             `;
             articlesGrid.appendChild(articleCard);
@@ -223,7 +224,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const latestPost = sortedPosts[0];
 
             if (featuredImage) {
-                featuredImage.src = latestPost.thumbnail;
+                // Use a root-relative path for the image source
+                featuredImage.src = `/${latestPost.thumbnail}`;
                 featuredImage.alt = latestPost.title; 
             }
             if (featuredCategory) {
@@ -236,7 +238,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 featuredDescription.textContent = latestPost.description;
             }
             if (featuredLink) {
-                featuredLink.href = `posts/${latestPost.slug}/index.html`;
+                // Use a root-relative path for the link
+                featuredLink.href = `/posts/${latestPost.slug}/index.html`;
             }
         } else {
             const featuredSection = document.querySelector('.featured-post-section');
