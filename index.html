@@ -10,19 +10,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="aetheriicon.png" sizes="48x48">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
     <header class="hero-section">
     <div class="hero-overlay"></div>
 <nav class="main-nav container-nav">
-    <div class="logo">
+    <div class="logo" data-aos="fade-down">
         <a href="index.html">
             <img src="assets/aetherilogo.webp" alt="Aetheri Web Design Logo">
         </a>
     </div>
 
-    <div class="nav-right">
+    <div class="nav-right" data-aos="fade-down">
             <ul class="nav-links">
             <li><a href="index.html" class="home-btn">Home</a></li>
             <li><a href="services.html" class="serv-btn">Services</a></li>
@@ -42,7 +43,7 @@
     </button>
 </nav>
     
-    <div class="hero-content container">
+    <div class="hero-content container" data-aos="fade-up">
         <h1>We empower businesses with strong, supportive digital solutions.</h1>
     </div>
 </header>
@@ -50,10 +51,10 @@
     <main>
         <section class="full-service-section">
             <div class="container two-col-layout">
-                <div class="service-title">
+                <div class="service-title" data-aos="fade-right">
                     <h2>Complete Digital<br>Growth<br>Solutions</h2>
                 </div>
-                <div class="service-description">
+                <div class="service-description" data-aos="fade-left">
                     <p>Clients trust Aetheri Web Design to realize their business's online potential through our Digital Solutions.</p>
                     <a href="services.html" class="btn btn-primary">Learn more about our solutions</a>
                 </div>
@@ -62,9 +63,9 @@
 
         <section class="help-section">
             <div class="container">
-                <h2>HOW CAN WE HELP?</h2>
+                <h2 data-aos="fade-up">HOW CAN WE HELP?</h2>
                 
-                <div class="help-item">
+                <div class="help-item" data-aos="fade-up">
                     <div class="help-header">
                         <h3>Website as a Service (WaaS)</h3>
                         <span class="toggle-icon">+</span>
@@ -76,7 +77,7 @@
                     </div>
                 </div>
 
-                <div class="help-item">
+                <div class="help-item" data-aos="fade-up" data-aos-delay="100">
                     <div class="help-header">
                         <h3>Custom Site Build</h3>
                         <span class="toggle-icon">+</span>
@@ -89,7 +90,7 @@
                 </div>
                 
                 <!-- UPDATED HELP ITEM 3 
-                <div class="help-item">
+                <div class="help-item" data-aos="fade-up">
                      <div class="help-header">
                         <h3>Search Engine Optimization</h3>
                         <span class="toggle-icon">+</span>
@@ -105,7 +106,7 @@
         </section>
 
         <!-- 
-        <section class="brands-section">
+        <section class="brands-section" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
                     <h2>TAKING BRANDS TO THE NEXT LEVEL</h2>
@@ -120,32 +121,32 @@
 
         <section class="process-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" data-aos="fade-up">
                     <h2>OUR STREAMLINED WAAS PROCESS</h2>
                     <p>From initial consultation to ongoing support, our five-step process ensures your website is built efficiently, launched flawlessly, and maintained perfectly, all for a simple monthly fee.</p>
                 </div>
                 <div class="process-grid">
-                    <div class="process-step">
+                    <div class="process-step" data-aos="fade-up" data-aos-delay="100">
                         <span class="step-number">01</span>
                         <h3>Consult</h3>
                         <p>We begin by understanding your business, goals, and audience to map out the perfect strategy for your website's success.</p>
                     </div>
-                    <div class="process-step">
+                    <div class="process-step" data-aos="fade-up" data-aos-delay="200">
                         <span class="step-number">02</span>
                         <h3>Design & Prototype</h3>
                         <p>Our team creates a stunning, user-friendly design mockup and refines it with your feedback until it perfectly captures your brand.</p>
                     </div>
-                    <div class="process-step">
+                    <div class="process-step" data-aos="fade-up" data-aos-delay="300">
                         <span class="step-number">03</span>
                         <h3>Develop & Build</h3>
                         <p>Using efficient & clean code, we bring the design to life, building a fast, responsive, and SEO-optimized website from the ground up.</p>
                     </div>
-                    <div class="process-step">
+                    <div class="process-step" data-aos="fade-up" data-aos-delay="400">
                         <span class="step-number">04</span>
                         <h3>Deploy & Launch</h3>
                         <p>After rigorous testing, we handle the entire launch process. Your new website is introduced to the world, seamlessly.</p>
                     </div>
-                    <div class="process-step">
+                    <div class="process-step" data-aos="fade-up" data-aos-delay="500">
                         <span class="step-number">05</span>
                         <h3>Support & Maintain</h3>
                         <p>After the launch of your custom site, we provide continuous hosting, security, updates, and ongoing SEO revisions and support to keep your site running perfectly, and bringing you new customers.</p>
@@ -154,7 +155,7 @@
             </div>
         </section>
         
-        <section class="work-proud-section">
+        <section class="work-proud-section" data-aos="zoom-in">
             <div class="container work-proud-content">
                 <h3>Learn more about WaaS</h3>
                 <a href="waas.html" class="learn-more-link">Dive Deeper <span class="arrow-circle">→</span></a>
@@ -165,7 +166,7 @@
 <section class="mission-section-index">
     <div class="container mission-layout-with-image"> 
         
-        <div class="mission-image-wrapper">
+        <div class="mission-image-wrapper" data-aos="fade-right">
             <img src="assets/headshot.webp" alt="Photo of Tyson Fitzgerald">
             <div class="team-member-info-index">
                             <h4>Tyson Fitzgerald</h4>
@@ -174,7 +175,7 @@
         </div>
         
 
-        <div class="mission-text-content">
+        <div class="mission-text-content" data-aos="fade-left">
             <div class="mission-statement-index">
                 <h2>Our Mission</h2>
                 <p>To dismantle digital complexities and build powerful, intuitive web experiences that empower our clients to achieve sustained online growth.</p>
@@ -188,7 +189,7 @@
 
         <section class="pricing-section">
             <div class="container">
-                <div class="pricing-header">
+                <div class="pricing-header" data-aos="fade-up">
                     <h2>Plans and Pricing</h2>
                     <p>Flexible solutions designed to scale with your business.</p>
                     <div class="billing-toggle">
@@ -198,7 +199,7 @@
                 </div>
 
                 <div class="pricing-grid">
-                    <div class="pricing-card" data-plan="waas">
+                    <div class="pricing-card" data-plan="waas" data-aos="fade-up" data-aos-delay="100">
                         <div class="card-main-info">
                             <h3>Website as a Service</h3>
                             <div class="price-display" data-monthly-price="299">
@@ -226,7 +227,7 @@
                         </div>
                     </div>
 
-                    <div class="pricing-card dark-card">
+                    <div class="pricing-card dark-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="card-main-info">
                             <h3>Custom Site Build</h3>
                             <p class="price-term-custom">Starting at</p>
@@ -252,21 +253,21 @@
 
                 <section class="latest-posts-section">
                     <div class="container">
-                        <div class="section-header">
+                        <div class="section-header" data-aos="fade-up">
                             <h2>EXPANDING KNOWLEDGE</h2>
                             <p>Everything you need to know to stay ahead of the game.</p>
                         </div>
-                        <h2>Latest Posts</h2>
-                <div class="articles-grid" id="articles-grid">
+                        <h2 data-aos="fade-up">Latest Posts</h2>
+                <div class="articles-grid" id="articles-grid" data-aos="fade-up">
                 </div>
 
-                <div class="pagination" id="pagination-container">
+                <div class="pagination" id="pagination-container" data-aos="fade-up">
                 </div>
 
             </div>
         </section>
         
-        <section class="ambitious-cta-section">
+        <section class="ambitious-cta-section" data-aos="zoom-in">
             <div class="cta-overlay"></div>
             <div class="container cta-content">
                 <h2>We empower ambitious companies & people to thrive online.</h2>
@@ -278,7 +279,7 @@
     
     <footer class="main-footer">
         <div class="container">
-            <div class="newsletter-section">
+            <div class="newsletter-section" data-aos="fade-up">
                 <h2>Join our newsletter and stay in the loop about the latest tech trends.</h2>
                 <form class="newsletter-form" action="https://formspree.io/f/mqalrrwj" method="POST">
                     <input type="email" placeholder="Enter Your Email" name="_replyto">
@@ -287,18 +288,18 @@
             </div>
 
             <div class="footer-bottom">
-                <div class="footer-contact">
+                <div class="footer-contact" data-aos="fade-up" data-aos-delay="100">
                     <div class="logo">Aetheri Web Design</div>
                     <a href="mailto:contact@aetheriwebdesign.com">contact@aetheriwebdesign.com</a>
                     <a href="#" class="btn btn-primary">Book a call →</a>
                 </div>
-                <div class="footer-locations">
+                <div class="footer-locations" data-aos="fade-up" data-aos-delay="200">
                     <h3>LOCATION</h3>
                     <div class="locations-grid">
                         <p>Columbus, Ohio</p>
                     </div>
                 </div>
-                <div class="footer-connect">
+                <div class="footer-connect" data-aos="fade-up" data-aos-delay="300">
     <h3>Let's<br>Work<br>Together.</h3>
     <div class="social-icons">
     <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X">
@@ -320,6 +321,13 @@
     </footer>
 <script src="posts.js"></script>
 <script src="script.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true,
+    });
+</script>
 
 </body>
 </html>
