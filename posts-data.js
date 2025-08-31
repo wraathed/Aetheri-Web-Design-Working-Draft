@@ -4,7 +4,7 @@ const postsData = [
         title: 'Welcome to Aetheri Web Design!',
         category: 'First Post',
         description: 'Intro to Aetheri',
-        thumbnail: 'posts/welcome-to-aetheri/thumbnail.jpg',
+        thumbnail: 'posts/welcome-to-aetheri/thumbnail.webp',
         date: "2025-08-21"
     }
 ];
