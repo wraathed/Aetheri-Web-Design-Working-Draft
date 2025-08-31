@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const articlesGrid = document.getElementById('articles-grid');
     const paginationContainer = document.getElementById('pagination-container');
 
+    // Logic for the full blog page (with pagination)
     if (articlesGrid && paginationContainer) {
         let currentPage = 1;
         const postsPerPage = 6;
@@ -184,6 +185,27 @@ document.addEventListener('DOMContentLoaded', function () {
         // initial load
         displayPosts(currentPage);
         setupPagination();
+    } 
+    // Logic for the index page (latest 3 posts)
+    else if (articlesGrid) {
+        const sortedPosts = [...postsData].sort((a, b) => new Date(b.date) - new Date(a.date));
+        const latestThreePosts = sortedPosts.slice(0, 3);
+
+        latestThreePosts.forEach(post => {
+            const articleCard = document.createElement('div');
+            articleCard.className = 'article-card';
+
+            articleCard.innerHTML = `
+                <img src="${post.thumbnail}" alt="${post.title}">
+                <div class="article-content">
+                    <span class="post-meta">${post.category}</span>
+                    <h4>${post.title}</h4>
+                    <p>${post.description}</p>
+                    <a href="posts/${post.slug}/index.html">Read Post</a>
+                </div>
+            `;
+            articlesGrid.appendChild(articleCard);
+        });
     }
 
     // --- Dynamically Update Featured Blog Post ---

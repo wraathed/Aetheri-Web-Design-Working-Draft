@@ -108,6 +108,23 @@ ul {
     flex-shrink: 0; 
 }
 
+.to-blog-btn {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    display: block;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    border: 2px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-left: 0; 
+    flex-shrink: 0;
+    width: 15rem;
+}
+
 .contact-btn:hover {
     background-color: #1faa82;
 }
@@ -485,6 +502,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    padding-bottom: 15px;
 }
 
 .article-card {
