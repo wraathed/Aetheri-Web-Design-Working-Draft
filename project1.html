@@ -9,7 +9,7 @@
 <body>
 
     <nav>
-        <div class="logo">@wraathed</div>
+        <div class="logo">@tysonfitzgerald</div>
         <ul class="nav-links">
             <!-- Updated Link -->
             <li><a href="portfolio.html">HOME</a></li>
@@ -19,27 +19,72 @@
     </nav>
 
     <div class="container">
-        <h1 class="glow-text">PROJECT ALPHA</h1>
-        <h3>Classification: Web Development</h3>
+        <h1 class="glow-text">Hyper Pet RNG Farm</h1>
+        <h3>Roblox Game</h3>
         <br>
-        <p>This system was designed to optimize user workflow in low-light environments. It features a custom reactive framework and server-side integration.</p>
+        <p>Hyper Pet RNG Farm is a Roblox game that I've developed. The main gameloop is [player buys egg -> player hatches egg into pet ->
+            pet starts producing currency -> player gets money -> player buys more eggs]. This page describes some of the basic main aspects of the
+            game, but there is a lot more going on behind the scenes, and a lot more to come as it is still a work in progress!
+        </p>
         
         <div class="gallery">
             <div class="gallery-item">
-                <img src="https://via.placeholder.com/600x400/000000/00f3ff?text=Dashboard+View" alt="Project Alpha 1">
-                <div class="caption">Fig 1.1: Main Dashboard UI</div>
+                <img src="assets/rblx1.PNG" alt="Project Alpha 1">
+                <div class="caption">Fig 1.1: Main View</div>
+                <p>This is what players see when they join. The system saves player pets, money, and inventory, and players pets keep
+                    producing eggs while they are offline, so that when they log back in they get compensated for their offline time.</p>
             </div>
             <div class="gallery-item">
-                <img src="https://via.placeholder.com/600x400/000000/00f3ff?text=Mobile+Response" alt="Project Alpha 2">
-                <div class="caption">Fig 1.2: Mobile Responsiveness</div>
+                <img src="assets/holding.jpg" alt="Item Selection / Holding Animation">
+                <div class="caption">Fig 1.2: Item Selection / Holding Animation</div>
+                <p>All items selected in the inventory (right now, the only items are eggs, pets, and egg boxes) are held in an overhead
+                    animation above the character's head.
+                </p>
             </div>
             <div class="gallery-item">
-                <img src="https://via.placeholder.com/600x400/000000/00f3ff?text=Code+Structure" alt="Project Alpha 3">
-                <div class="caption">Fig 1.3: Backend Logic</div>
+                <img src="assets/eggs.gif" alt="Project Alpha 3">
+                <div class="caption">Fig 1.3: Selling Mechanic</div>
+                    <p>Pets produce eggs, which are sold for cash when the player sells the collection box!
+                    Everything you see, from pet and models to animations, physics, and effects were designed and developed by me for this game.</p>
             </div>
             <div class="gallery-item">
-                <img src="https://via.placeholder.com/600x400/000000/00f3ff?text=User+Flow" alt="Project Alpha 4">
-                <div class="caption">Fig 1.4: User Authentication</div>
+                <img src="assets/gui.gif" alt="Project Alpha 4">
+                <div class="caption">Fig 1.4: UI/UX Interaction</div>
+                <p>This is the current version of the UI elements in the game. The inventory has filtering options, and items can be 
+                    freely dragged around inside the backpack and hotbar. There are built in keybinds to open the backpack, and there 
+                    are vibrations when you click on buttons on mobile devices.
+                </p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/conveyor.gif" alt="Project Alpha 5">
+                <div class="caption">Fig 1.5: Placed Pets</div>
+                <p>The pets on the conveyor look like this after they've been hatched. I've written a script that goes onto each pet model that loops 
+                    their animation indefinitely.
+                </p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/blender.gif" alt="Project Alpha 6">
+                <div class="caption">Fig 1.6: Modeling & Animating</div>
+                <p>My process for creating models tends to be Blockbench (create the mesh & textures) -> Blender (rig & animate) -> RBLX Studio.
+                    One of the main things that I focus on to bring a model to life is realistic, fluid movement, in ways that aren't robotic.
+                </p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/commands.gif" alt="Project Alpha 6">
+                <div class="caption">Fig 1.7: Admin Commands</div>
+                <p>I've also implemented admin commands for myself to use to start events - which events are normally on a 20 minute countdown
+                    and run for 5 minutes, but I can switch the mode over to manual to start an "Admin Event" in which I can start events for 
+                    however long whenever I please. The purpose of events is so that players can collect eggs with "mutations" or "multipliers",
+                    which make the eggs more valuable by making the pets that they hatch produce higher currency.
+                </p>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/notifications.gif" alt="Project Alpha 6">
+                <div class="caption">Fig 1.8: Screen Notifications</div>
+                <p>As you can see in the admin commands block, there are notifications that appear on the player's screen for certain triggers. 
+                    Other triggers for notifications are trying to interact with something without having the required item selected, events starting/ending, 
+                    & global admin messages.
+                </p>
             </div>
         </div>
 
@@ -47,7 +92,7 @@
     </div>
 
     <footer>
-        &copy; 2025 Aetheri Web Design LLC. System Status: Online.
+        &copy; 2025 Aetheri Web Design LLC.
     </footer>
 
     <script src="script2.js"></script>
