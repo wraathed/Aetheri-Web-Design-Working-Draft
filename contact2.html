@@ -19,28 +19,37 @@
     </nav>
 
     <div class="container">
-        <h1 class="glow-text">ESTABLISH UPLINK</h1>
-        <p>Fill out the form below to transmit a message.</p>
+        <h1 class="glow-text">CONTACT ME</h1>
+        <p>Fill out the form below to send a message.</p>
         <br>
 
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Transmission Sent Successfully.');">
-            <div class="form-group">
-                <label for="name">USER ID / NAME:</label>
-                <input type="text" id="name" required placeholder="Enter Name...">
-            </div>
+        <form class="contact-form" action="https://formspree.io/f/mpwlgrwj" method="POST">
+    <div class="form-group">
+        <label for="name">NAME:</label>
+        <!-- Added name="name" -->
+        <input type="text" id="name" name="name" required placeholder="Enter Name...">
+    </div>
 
-            <div class="form-group">
-                <label for="email">DIGITAL ADDRESS / EMAIL:</label>
-                <input type="email" id="email" required placeholder="name@example.com">
-            </div>
+    <div class="form-group">
+        <label for="email">EMAIL:</label>
+        <!-- Added name="email" -->
+        <input type="email" id="email" name="email" required placeholder="name@example.com">
+    </div>
 
-            <div class="form-group">
-                <label for="message">DATA PACKET / MESSAGE:</label>
-                <textarea id="message" rows="5" required placeholder="Type your message here..."></textarea>
-            </div>
+    <div class="form-group">
+        <label for="message">MESSAGE:</label>
+        <!-- Added name="message" -->
+        <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+    </div>
 
-            <button type="submit">TRANSMIT DATA</button>
-        </form>
+    <!-- Optional: Keeps the redirect to thank-you.html if you have that page -->
+    <input type="hidden" name="_next" value="thank-you.html">
+
+    <!-- Optional: Makes the email subject line look nicer in your inbox -->
+    <input type="hidden" name="_subject" value="New Data Packet Transmission">
+
+    <button type="submit">SUBMIT</button>
+</form>
     </div>
 
     <footer>

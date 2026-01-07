@@ -44,7 +44,7 @@ nav {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--neon-cyan);
-    text-transform: lowercase; /* Makes the logo look cool */
+    text-transform: lowercase; 
 }
 
 .nav-links {
@@ -68,6 +68,13 @@ nav {
 
 /* --- LAYOUTS --- */
 .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: 80vh;
+}
+
+.container-prj {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
@@ -145,7 +152,7 @@ p {
     border: 1px dashed #444;
 }
 
-/* --- PROJECT DETAIL PAGES --- */
+/* --- PROJECT DETAIL PAGES (GALLERY) --- */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
@@ -159,18 +166,62 @@ p {
     border: 1px solid #333;
 }
 
-.gallery-item img {
+/* NEW: Media Wrapper for Blur/Magnifying Effect */
+.media-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    cursor: crosshair; /* Adds to the 'inspect' feel */
+}
+
+.media-wrapper img {
     width: 100%;
     height: auto;
     display: block;
-    opacity: 0.8;
-    transition: 0.3s;
+    /* Blur and dim when inactive */
+    filter: blur(5px) grayscale(80%) brightness(0.6);
+    transform: scale(1.02);
+    transition: all 0.4s ease-out;
 }
 
-.gallery-item img:hover {
-    opacity: 1;
+/* Hover State: Clear view */
+.media-wrapper:hover img {
+    filter: blur(0) grayscale(0%) brightness(1);
+    transform: scale(1);
     box-shadow: 0 0 10px var(--neon-cyan);
 }
+
+/* The Magnifying Glass Overlay */
+.media-wrapper::after {
+    content: "🔍︎";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 3rem;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
+    border: 2px solid var(--neon-cyan);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    
+    opacity: 1;
+    transition: all 0.3s ease;
+    pointer-events: none; /* Allows click to pass through */
+}
+
+/* Hide Magnifying Glass on Hover */
+.media-wrapper:hover::after {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
 
 .caption {
     margin-top: 10px;
