@@ -1,37 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Home</title>
-    <!-- References style2.css -->
-    <link rel="stylesheet" href="style2.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tyson Fitzgerald — Portfolio</title>
+<meta name="description" content="Tyson Fitzgerald, AI engineer in Columbus, OH. Automation pipelines, LLM integrations, and backend work.">
+<meta name="author" content="Tyson Fitzgerald">
+
+<style>
+:root{
+  --bg:#fbfcfe;
+  --panel:#eef2f8;
+  --text:#191d24;
+  --muted:#5d6774;
+  --line:#dae1ea;
+  --accent:#1f5fa8;
+  --code-bg:#e6ecf4;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:Consolas,Menlo,monospace;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#14181e;
+    --panel:#1b2027;
+    --text:#e4e8ee;
+    --muted:#939dab;
+    --line:#272e38;
+    --accent:#74a9ea;
+    --code-bg:#212832;
+  }
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0 auto;
+  max-width:800px;
+  padding:64px 24px 80px;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.65;
+}
+
+p{margin:0 0 15px}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(31,95,168,.28)}
+a:hover{border-bottom-color:var(--accent)}
+@media (prefers-color-scheme: dark){ a{border-bottom-color:rgba(116,169,234,.35)} }
+
+ul{margin:0 0 15px;padding-left:0;list-style:none}
+li{position:relative;padding-left:20px;margin-bottom:11px}
+li::before{
+  content:"";
+  position:absolute;
+  left:2px;
+  top:.7em;
+  width:5px;
+  height:5px;
+  background:var(--accent);
+  opacity:.55;
+  border-radius:1px;
+}
+
+code{
+  font-family:var(--mono);
+  font-size:13.5px;
+  background:var(--code-bg);
+  padding:1px 5px;
+  border-radius:3px;
+}
+
+/* ---------- header ---------- */
+header{
+  padding-bottom:26px;
+  margin-bottom:34px;
+  border-bottom:2px solid var(--text);
+}
+h1{
+  font-family:var(--serif);
+  font-size:40px;
+  font-weight:normal;
+  letter-spacing:-.015em;
+  margin:0 0 6px;
+}
+.subtitle{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:19px;
+  color:var(--muted);
+  margin:0 0 18px;
+}
+.contact-line{
+  font-size:14.5px;
+  color:var(--muted);
+  margin:0;
+}
+.contact-line .sep{color:var(--line);padding:0 4px}
+
+/* ---------- section headings ---------- */
+h2{
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:56px 0 22px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--line);
+}
+
+h3{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:normal;
+  letter-spacing:-.01em;
+  margin:0 0 3px;
+}
+
+/* ---------- intro ---------- */
+.intro p{font-size:17px}
+.intro p:first-child::first-letter{
+  font-family:var(--serif);
+  font-size:52px;
+  line-height:.85;
+  float:left;
+  padding:6px 9px 0 0;
+  color:var(--accent);
+}
+.intro .closing{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:18px;
+  color:var(--muted);
+  margin-top:22px;
+}
+
+/* ---------- projects ---------- */
+.project{
+  position:relative;
+  padding:26px 26px 24px 30px;
+  margin-bottom:22px;
+  background:var(--panel);
+  border-left:3px solid var(--accent);
+  border-radius:0 5px 5px 0;
+}
+.num{
+  font-family:var(--mono);
+  font-size:11.5px;
+  letter-spacing:.1em;
+  color:var(--accent);
+  display:block;
+  margin-bottom:6px;
+}
+.meta{color:var(--muted);font-size:14px;margin:0 0 15px}
+
+.stack{margin:0 0 4px;display:flex;flex-wrap:wrap;gap:6px}
+.stack span{
+  font-family:var(--mono);
+  font-size:11.5px;
+  color:var(--muted);
+  border:1px solid var(--line);
+  border-radius:3px;
+  padding:2px 8px;
+  background:var(--bg);
+}
+
+details{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+summary{
+  cursor:pointer;
+  list-style:none;
+  font-family:var(--mono);
+  font-size:12.5px;
+  letter-spacing:.05em;
+  color:var(--accent);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";
+  font-size:15px;
+  line-height:1;
+  color:var(--muted);
+}
+details[open] summary::after{content:"\2212"}
+details[open] summary{margin-bottom:14px}
+details li{font-size:15px;color:var(--muted)}
+details li code{color:var(--text)}
+
+/* ---------- experience ---------- */
+.job{
+  padding-bottom:24px;
+  margin-bottom:24px;
+  border-bottom:1px solid var(--line);
+}
+.job:last-of-type{border-bottom:0}
+.job h3{font-size:19px}
+.job .org{color:var(--accent)}
+.dates{
+  font-family:var(--mono);
+  font-size:12.5px;
+  letter-spacing:.03em;
+}
+
+/* ---------- skills ---------- */
+.skills p{
+  display:grid;
+  grid-template-columns:112px 1fr;
+  gap:14px;
+  margin-bottom:13px;
+  font-size:15px;
+}
+.skills .label{
+  font-family:var(--mono);
+  font-size:11.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--accent);
+  padding-top:3px;
+}
+@media (max-width:560px){
+  .skills p{grid-template-columns:1fr;gap:2px}
+}
+
+/* ---------- contact ---------- */
+.contact-block{
+  background:var(--panel);
+  border-radius:5px;
+  padding:26px;
+}
+.contact-block p:last-child{margin-bottom:0}
+.big-email{font-family:var(--serif);font-size:21px}
+
+button{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.05em;
+  padding:5px 11px;
+  margin-left:8px;
+  border:1px solid var(--line);
+  border-radius:3px;
+  background:var(--bg);
+  color:var(--muted);
+  cursor:pointer;
+  vertical-align:2px;
+}
+button:hover{color:var(--accent);border-color:var(--accent)}
+
+footer{
+  margin-top:60px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:13px;
+  font-family:var(--mono);
+  letter-spacing:.03em;
+}
+
+@media (max-width:600px){
+  body{padding:40px 18px 60px}
+  h1{font-size:32px}
+  .project{padding:22px 20px 20px 22px}
+}
+</style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">@tysonfitzgerald</div>
-        <ul class="nav-links">
-            <!-- Points to portfolio.html -->
-            <li><a href="portfolio.html">HOME</a></li>
-            <li><a href="projects.html">PROJECTS</a></li>
-            <li><a href="contact2.html">CONTACT</a></li>
-        </ul>
-    </nav>
+<header>
+  <h1>Tyson Fitzgerald</h1>
+  <p class="subtitle">AI Engineer — Columbus, OH, open to remote</p>
+  <p class="contact-line">
+    <a href="mailto:tfitzgerald779@gmail.com">tfitzgerald779@gmail.com</a>
+    <span class="sep">/</span> (614) 353-8039
+    <span class="sep">/</span> <a href="https://github.com/wraathed" target="_blank" rel="noopener">GitHub</a>
+    <span class="sep">/</span> <a href="https://linkedin.com/in/tyson-fitzgerald-6785801b5" target="_blank" rel="noopener">LinkedIn</a>
+  </p>
+</header>
 
-    <div class="container hero">
-        <h1 class="glow-text">HELLO!</h1>
-        <p id="typing-text" class="typing-cursor" data-text="Initialising..."></p>
-        
-        <br><br>
-        <a href="projects.html"><button>VIEW PROJECTS</button></a>
-    </div>
+<section class="intro">
+  <p>
+    I build automation and backend systems that use LLM APIs. Most of that work has been for small
+    businesses with one specific job they wanted taken off their plate: a field services company drowning
+    in end-of-day paperwork, a bookkeeper typing invoices into a spreadsheet by hand. More recently I've
+    been writing automated tests that check whether AI-generated code actually works.
+  </p>
+  <p>
+    A lot of what I do is figuring out where the model belongs in a system and where it doesn't. It's good
+    at turning a technician's shorthand into a paragraph a customer can read. It should not be the thing
+    deciding what a customer owes. Below are three projects where that distinction mattered.
+  </p>
+  <p class="closing">I'm looking for a full-time applied AI role.</p>
+</section>
 
-    <footer>
-        &copy; 2025 Aetheri Web Design LLC.
-    </footer>
+<h2>Projects</h2>
 
-    <!-- References script2.js -->
-    <script src="script2.js"></script>
+<!-- ---------------- Project 1 ---------------- -->
+<article class="project">
+  <span class="num">01</span>
+  <h3>Field Dispatch Automation Pipeline</h3>
+  <p class="meta">
+    Built for a field services client
+    <span class="sep">·</span>
+    <a href="https://ai-lead-pipeline.vercel.app/" target="_blank" rel="noopener">Live demo</a>
+  </p>
+
+  <p>
+    A technician finishes a job and fills out one form on their phone: job ID, customer email, price,
+    a few lines of notes, and photos. The server rewrites the notes into something a customer can read,
+    puts it in a PDF, saves the job to Postgres, and sends the PDF and the photos to a webhook that files
+    them in Google Drive and emails the customer.
+  </p>
+  <p>
+    The owner was spending an hour or two every evening doing this by hand. Now it takes about five minutes
+    a day.
+  </p>
+
+  <div class="stack">
+    <span>GPT-4o-mini</span><span>Node</span><span>Express</span><span>PostgreSQL</span>
+    <span>PDFKit</span><span>Make.com</span><span>Google Drive</span><span>Vercel</span>
+  </div>
+
+  <details>
+    <summary>Notes on how it's built</summary>
+    <ul>
+      <li>
+        The model never sees the numbers. Job ID, price, and customer email go straight from the form
+        fields into the PDF. The only thing I send to OpenAI is the notes field. This was in response to a
+        real problem: when the model was handling the whole document, it would occasionally get a detail
+        wrong on something the customer was about to read.
+      </li>
+      <li>
+        The prompt asks for one thing only, which is rewriting shorthand into one or two plain paragraphs
+        without dropping technical details. Keeping the task that narrow is why the output is consistent
+        enough to send without anyone reviewing it.
+      </li>
+      <li>
+        It's one endpoint doing five things: the upload, the API call, the PDF, the database insert, and the
+        outbound webhook. Each step logs, so when a job fails I can tell which part broke instead of
+        guessing.
+      </li>
+      <li>
+        Photos and the PDF get streamed into the outbound request rather than loaded into memory first.
+        Techs upload a lot of pictures and some of them are large.
+      </li>
+      <li>
+        If the webhook URL isn't configured, the job still processes and still saves. Errors come back as
+        JSON that the form displays, so the tech knows it didn't go through.
+      </li>
+    </ul>
+  </details>
+</article>
+
+<!-- ---------------- Project 2 ---------------- -->
+<article class="project">
+  <span class="num">02</span>
+  <h3>Multiplayer Game Server Backend &amp; Plugin Environment</h3>
+  <p class="meta">
+    Website and API for a game server I ran
+    <span class="sep">·</span>
+    <a href="https://classic-rust-api.onrender.com/index.html" target="_blank" rel="noopener">Live site</a>
+  </p>
+
+  <p>
+    Players sign in with Steam, link their Discord, buy things from a store, and open support tickets.
+    There's an admin side for handling those tickets and a live status readout for the server itself.
+  </p>
+  <p>
+    The part I like most is the connection to the game. A C# plugin running inside the server calls the same
+    API, so when someone buys a rank on the website they have it in game on their next command. Nobody has
+    to be around to grant it.
+  </p>
+
+  <div class="stack">
+    <span>C# plugin</span><span>Node</span><span>Express</span><span>PostgreSQL</span>
+    <span>Passport / Steam</span><span>Discord OAuth</span><span>GameDig</span><span>Render</span>
+  </div>
+
+  <details>
+    <summary>Notes on how it's built</summary>
+    <ul>
+      <li>
+        Spending currency happens inside a transaction that locks the player's row with
+        <code>SELECT ... FOR UPDATE</code> first. Players worked out that spamming the buy command could get
+        them two items for one payment. Locking the row before the balance check ended that.
+      </li>
+      <li>
+        The endpoints the game plugin calls return plain strings like <code>SUCCESS</code> and
+        <code>INSUFFICIENT_FUNDS</code> instead of JSON. Parsing JSON inside the plugin was more trouble than
+        it was worth. The browser side of the same database gets normal JSON responses.
+      </li>
+      <li>
+        Access to a kit is checked when the player redeems it, not when they buy it. Rank kits look at the
+        player's ranks, Discord kits require a linked account, and Steam group kits check the group live.
+        Steam's API returns nothing for private profiles, so there's a fallback that reads the group's member
+        list XML instead.
+      </li>
+      <li>
+        One Discord account can't be linked to two Steam accounts. People were unlinking and relinking to
+        claim the Discord reward on a second character, so the server checks for an existing link before it
+        saves.
+      </li>
+      <li>
+        Sessions are stored in Postgres rather than in memory. The free hosting tier restarts the container
+        on its own schedule and everyone was getting logged out when it did.
+      </li>
+      <li>
+        Tickets are threaded messages with a status that changes based on who replied last, plus guards so
+        nobody can post to a closed ticket. It's ordinary relational modeling, but I had actual users filing
+        actual tickets, which is a good way to find out what you got wrong.
+      </li>
+    </ul>
+  </details>
+</article>
+
+<!-- ---------------- Project 3 ---------------- -->
+<article class="project">
+  <span class="num">03</span>
+  <h3>Invoice Extraction Pipeline</h3>
+  <p class="meta">
+    Bookkeeping automation
+    <span class="sep">·</span>
+    <a href="https://invoice-ai-demo-one.vercel.app/" target="_blank" rel="noopener">Live demo</a>
+  </p>
+
+  <p>
+    Upload a photo or scan of an invoice and it comes back as a spreadsheet row: vendor, invoice date, due
+    date, tax, and total. The browser converts the file, a serverless function sends it to GPT-4o, and the
+    result gets appended to the client's Google Sheet.
+  </p>
+  <p>
+    The interesting part isn't the extraction, which mostly just works. It's everything I do to the answer
+    before it's allowed into the sheet.
+  </p>
+
+  <div class="stack">
+    <span>GPT-4o vision</span><span>Node</span><span>Vercel serverless</span><span>Google Sheets API</span>
+  </div>
+
+  <details>
+    <summary>Notes on how it's built</summary>
+    <ul>
+      <li>
+        I ask for strict JSON and describe the exact format of every field, then check all of it again in
+        code anyway. The prompt gets it right most of the time. The code makes it right the rest of the time.
+      </li>
+      <li>
+        Amounts go through a parser that strips currency symbols and handles European decimals. A German
+        invoice came back as <code>"44,90 €"</code>, which plain <code>parseFloat</code> reads as 44. Errors
+        like that don't announce themselves. They just sit in the books being wrong.
+      </li>
+      <li>
+        Dates get converted to <code>YYYY-MM-DD</code> no matter what format they arrive in. If a date is
+        genuinely unreadable I pass the raw text through instead of guessing, so it's obvious in the sheet
+        that something needs a look.
+      </li>
+      <li>
+        Every row is written with the status "Pending Approval." Reading an invoice quickly is worth doing
+        automatically. Recording it is not something I wanted happening without a person seeing it.
+      </li>
+      <li>
+        The Google service account key gets cleaned up when it loads, since hosting providers tend to mangle
+        multi-line environment variables. This broke my deploys twice before I stopped fighting it and just
+        normalized the key.
+      </li>
+    </ul>
+  </details>
+</article>
+
+<h2>Experience</h2>
+
+<div class="job">
+  <h3>AI Code Engineering, Roblox / Lua <span class="org">— Alignerr</span></h3>
+  <p class="meta"><span class="dates">APR 2026 — PRESENT</span> · Contract, remote</p>
+  <ul>
+    <li>
+      Wrote automated evaluations in Lua that check AI-generated code inside a 3D game environment, replacing
+      manual pass/fail review with tests that give the same answer every time.
+    </li>
+    <li>
+      Built reference implementations of game mechanics to score model output against, so there was something
+      concrete to compare to instead of a judgment call.
+    </li>
+    <li>
+      Ran rubric evaluations on model-generated Roblox Studio builds over several months with lots of good reviews.
+    </li>
+  </ul>
+</div>
+
+<div class="job">
+  <h3>Founder / Automation Engineer <span class="org">— Aetheri Web Design LLC</span></h3>
+  <p class="meta"><span class="dates">JAN 2024 — PRESENT</span> · Columbus, OH</p>
+  <ul>
+    <li>
+      Built and shipped the job completion pipeline described above for a field services client, cutting
+      their daily admin from one to two hours down to a few minutes.
+    </li>
+    <li>
+      Stopped fabricated details from reaching customer documents by routing job ID, price, and customer
+      email straight from the form to the PDF instead of through the model, and added validation and
+      fallbacks around the parts that stayed unreliable.
+    </li>
+    <li>
+      Scoped, priced, and delivered custom automation for several small business clients, which mostly meant
+      translating what someone described in plain English into something that runs.
+    </li>
+    <li>Connected LLM APIs to the SaaS tools and databases clients were already using.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <h3>A.A.S. Software Development <span class="org">— Columbus State</span></h3>
+  <p class="meta"><span class="dates">EXPECTED MAY 2027</span> · Coursework: Python, Java, AWS</p>
+</div>
+
+<h2>Skills</h2>
+
+<div class="skills">
+  <p><span class="label">Languages</span> <span>Python, C#, Lua, JavaScript/TypeScript, SQL</span></p>
+  <p><span class="label">AI / LLM</span> <span>Anthropic and OpenAI APIs, prompt engineering, evaluation harnesses, RAG, embeddings, tool calling, agent orchestration, MCP</span></p>
+  <p><span class="label">Backend</span> <span>FastAPI, Node, Express, PostgreSQL, pgvector, REST APIs, webhooks, Vercel, Render</span></p>
+  <p><span class="label">Tools</span> <span>Claude Code, Cursor, Git, Docker, n8n / Make, Roblox Studio, Unity</span></p>
+</div>
+
+<h2>Contact</h2>
+
+<div class="contact-block">
+  <p>
+    I'm looking for a full-time applied AI role where I can build features end to end. Email is the fastest
+    way to reach me.
+  </p>
+  <p>
+    <span class="big-email"><a href="mailto:tfitzgerald779@gmail.com">tfitzgerald779@gmail.com</a></span>
+    <button id="copy" type="button">copy</button>
+  </p>
+  <p class="meta" style="margin:0">
+    (614) 353-8039
+    <span class="sep">·</span>
+    <a href="https://github.com/wraathed" target="_blank" rel="noopener">github.com/wraathed</a>
+  </p>
+</div>
+
+<footer>
+  Tyson Fitzgerald · Columbus, OH · <span id="year">2026</span>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.getElementById('copy').addEventListener('click', function () {
+  var btn = this;
+  var email = 'tfitzgerald779@gmail.com';
+
+  function done() {
+    btn.textContent = 'copied';
+    setTimeout(function () { btn.textContent = 'copy'; }, 1500);
+  }
+
+  function fallback() {
+    var input = document.createElement('input');
+    input.value = email;
+    document.body.appendChild(input);
+    input.select();
+    try { document.execCommand('copy'); done(); } catch (e) {}
+    document.body.removeChild(input);
+  }
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(email).then(done, fallback);
+  } else {
+    fallback();
+  }
+});
+</script>
+
 </body>
 </html>
