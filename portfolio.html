@@ -193,6 +193,112 @@ details[open] summary{margin-bottom:14px}
 details li{font-size:15px;color:var(--muted)}
 details li code{color:var(--text)}
 
+/* ---------- try-it panel ---------- */
+.try{
+  margin-top:18px;
+  padding:16px 18px 6px;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:5px;
+}
+.try-title{
+  font-family:var(--mono);
+  font-size:12.5px;
+  letter-spacing:.05em;
+  color:var(--accent);
+  margin-bottom:8px;
+}
+.try p{font-size:15px;color:var(--muted)}
+.try li{font-size:15px;color:var(--muted)}
+.try li strong{color:var(--text);font-weight:600}
+.try pre{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0 0 14px;
+  padding:9px 12px;
+  background:var(--code-bg);
+  border-radius:4px;
+  overflow-x:auto;
+}
+.try pre code{
+  background:none;
+  padding:0;
+  font-size:12.5px;
+  white-space:nowrap;
+}
+.try pre button{margin-left:auto;flex-shrink:0}
+
+/* ---------- figures ---------- */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:18px;
+}
+figure{margin:0}
+figure img{
+  display:block;
+  width:100%;
+  height:auto;
+  border:1px solid var(--line);
+  border-radius:4px;
+  background:var(--bg);
+}
+figcaption{
+  font-size:13px;
+  line-height:1.5;
+  color:var(--muted);
+  margin-top:7px;
+}
+figure.single{margin:0 0 14px}
+figure img{cursor:zoom-in}
+@media (max-width:640px){
+  .gallery{grid-template-columns:1fr}
+}
+
+/* ---------- lightbox ---------- */
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+  background:rgba(12,15,20,.9);
+  cursor:zoom-out;
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  max-width:100%;
+  max-height:calc(100vh - 110px);
+  width:auto;
+  height:auto;
+  border-radius:4px;
+  box-shadow:0 12px 40px rgba(0,0,0,.5);
+}
+.lightbox figcaption{
+  max-width:820px;
+  margin-top:14px;
+  text-align:center;
+  color:#c9d1dc;
+  font-size:14px;
+}
+.lightbox .close{
+  position:absolute;
+  top:14px;
+  right:18px;
+  margin:0;
+  font-size:14px;
+  color:#c9d1dc;
+  background:transparent;
+  border-color:rgba(201,209,220,.35);
+}
+.lightbox .close:hover{color:#fff;border-color:#fff}
+body.no-scroll{overflow:hidden}
+
 /* ---------- experience ---------- */
 .job{
   padding-bottom:24px;
@@ -302,26 +408,83 @@ footer{
 <!-- ---------------- Project 1 ---------------- -->
 <article class="project">
   <span class="num">01</span>
-  <h3>Field Dispatch Automation Pipeline</h3>
+  <h3>Field Dispatch Pipeline, Made Usable by Agents</h3>
   <p class="meta">
-    Built for a field services client
-    <span class="sep"></span>
+    Built for a field services client, then opened up to AI agents
+    <span class="sep">·</span>
+    <a href="https://field-dispatch-automation.vercel.app/" target="_blank" rel="noopener">Live portal</a>
+    <span class="sep">·</span>
+    <a href="https://github.com/wraathed/field-dispatch-automation" target="_blank" rel="noopener">Source</a>
   </p>
 
   <p>
     A technician finishes a job and fills out one form on their phone: job ID, customer email, price,
     a few lines of notes, and photos. The server rewrites the notes into something a customer can read,
-    puts it in a PDF, saves the job to Postgres, and sends the PDF and the photos to a webhook that files
-    them in Google Drive and emails the customer.
+    puts it in a PDF, records the job in Postgres, and hands the PDF and photos to a Make.com scenario
+    that files them in Google Drive and emails the customer. The owner used to spend an hour or two every
+    evening doing this by hand. Now it takes about five minutes a day.
   </p>
   <p>
-    The owner was spending an hour or two every evening doing this by hand. Now it takes about five minutes
-    a day.
+    The second half is what I added on top. The job system is exposed to AI agents through an
+    <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener">MCP</a> server with six tools:
+    look up a job, pull a customer's history, list what was completed today, find customers who haven't
+    had a follow-up this week, list follow-ups, and draft a follow-up email. Five of those read. The one
+    that writes can only create a draft. Every draft lands in a review queue where a person approves or
+    rejects it, and only approval sends. The agent can look and suggest. A human decides.
   </p>
 
   <div class="stack">
-    <span>GPT-4o-mini</span><span>Node</span><span>Express</span><span>PostgreSQL</span>
+    <span>Node</span><span>Express</span><span>PostgreSQL / Neon</span><span>GPT-4o-mini</span>
     <span>PDFKit</span><span>Make.com</span><span>Google Drive</span><span>Vercel</span>
+    <span>MCP</span><span>Claude</span>
+  </div>
+
+  <div class="gallery">
+    <figure>
+      <img src="assets/dispatch-tech-form.png" alt="The technician's job completion form after a successful submission, showing the generated customer summary" loading="lazy">
+      <figcaption>The tech's side. One form on a phone, and the customer-ready summary comes back in a few seconds.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/dispatch-make-scenario.png" alt="Make.com scenario with webhook, Google Drive folder, Google Drive upload, and Gmail modules, all showing successful operations" loading="lazy">
+      <figcaption>Where the PDF and photos go. Make.com files them in Drive and emails the customer.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/dispatch-review-queue.png" alt="The office review queue showing an agent-drafted follow-up awaiting approval and a list of customers without a follow-up" loading="lazy">
+      <figcaption>The human side. Drafts written by the agent wait here until a person approves them.</figcaption>
+    </figure>
+  </div>
+
+  <div class="try">
+    <p class="try-title">Try it with your own Claude</p>
+    <p>
+      The tools are served over HTTP, so you can connect from Claude.ai, Claude Desktop, or Claude Code
+      without installing anything. The data is seeded demo data, not the client's customers. This is a
+      public demo token; anything you draft shows up in my review queue and goes nowhere until I approve it.
+    </p>
+    <figure class="single">
+      <img src="assets/dispatch-claude-desktop.png" alt="Claude Desktop connected to the field-dispatch MCP server, answering which customers have not received a follow-up and then drafting one" loading="lazy">
+      <figcaption>Claude Desktop connected over MCP: it finds the customers missing a follow-up, drafts one, and reports that a person has to approve it.</figcaption>
+    </figure>
+    <pre><code id="mcp-url">https://field-dispatch-automation.vercel.app/mcp/_1SzzoNk9Xdmt6cMqXXYWoBop_d2iYwD</code><button type="button" data-copy="https://field-dispatch-automation.vercel.app/mcp/_1SzzoNk9Xdmt6cMqXXYWoBop_d2iYwD">copy</button></pre>
+    <ul>
+      <li>
+        <strong>Claude.ai or Claude Desktop:</strong> Settings, then Connectors, then Add custom connector.
+        Paste the URL above as the server URL. No other fields needed.
+      </li>
+      <li>
+        <strong>Claude Code:</strong>
+        <code>claude mcp add --transport http field-dispatch &lt;the URL above&gt;</code>
+      </li>
+      <li>
+        Then ask things like <em>"Which customers haven't gotten a follow-up this week?"</em>,
+        <em>"Show me Maria Lopez's history"</em>, or
+        <em>"Draft a friendly follow-up for job DEMO-1006 asking whether the toilet is still running."</em>
+      </li>
+      <li>
+        Try asking it to send the email, delete a job, or change a price. It can't. There's no tool for
+        any of that, and the database role it runs under would refuse anyway.
+      </li>
+    </ul>
   </div>
 
   <details>
@@ -329,27 +492,44 @@ footer{
     <ul>
       <li>
         The model never sees the numbers. Job ID, price, and customer email go straight from the form
-        fields into the PDF. The only thing I send to OpenAI is the notes field. This was in response to a
-        real problem: when the model was handling the whole document, it would occasionally get a detail
-        wrong on something the customer was about to read.
+        fields into the PDF. The only thing sent to OpenAI is the notes field. This came from a real
+        problem: when the model handled the whole document, it would occasionally get a detail wrong on
+        something the customer was about to read.
       </li>
       <li>
-        The prompt asks for one thing only, which is rewriting shorthand into one or two plain paragraphs
-        without dropping technical details. Keeping the task that narrow is why the output is consistent
-        enough to send without anyone reviewing it.
+        Every job carries a status that advances through each stage: received, summarized, PDF stored,
+        customer notified. The row is inserted first, so a duplicate job ID is rejected before the paid
+        API call, and a failed email can be retried without redoing the earlier steps. Before this, a
+        failure partway through left a PDF on disk, no database row, and a bill from OpenAI.
       </li>
       <li>
-        It's one endpoint doing five things: the upload, the API call, the PDF, the database insert, and the
-        outbound webhook. Each step logs, so when a job fails I can tell which part broke instead of
-        guessing.
+        PDFs are rendered in memory and stored in Postgres as bytes rather than written to disk. That's
+        what let the whole thing move to Vercel's serverless functions, which have no writable filesystem.
       </li>
       <li>
-        Photos and the PDF get streamed into the outbound request rather than loaded into memory first.
-        Techs upload a lot of pictures and some of them are large.
+        Two separate credentials with two separate ceilings. The portal key unlocks the web app, including
+        approving follow-ups. The MCP bearer token unlocks the six tools and nothing else. Rotating the
+        token in Vercel cuts off every connected agent at once.
       </li>
       <li>
-        If the webhook URL isn't configured, the job still processes and still saves. Errors come back as
-        JSON that the form displays, so the tech knows it didn't go through.
+        The MCP server connects to Postgres as its own role that has <code>SELECT</code> on every table and
+        <code>INSERT</code> on the follow-ups table only. Even if the tool layer had a bug, the database
+        would refuse an update or delete. There's a test that asserts this.
+      </li>
+      <li>
+        The same tool definitions are served two ways: over stdio for a local Claude Code or Claude
+        Desktop, and over MCP's Streamable HTTP transport at <code>/mcp</code> on the deployed app. The
+        HTTP version is stateless, one JSON response per request, because that's what a serverless host
+        can actually serve.
+      </li>
+      <li>
+        All the SQL lives in one data-access module shared by the web app and the MCP server, so a tool and
+        an API route answering the same question run the same query.
+      </li>
+      <li>
+        Input validation closed a real hole. The job ID used to go straight into a file path, so a value
+        like <code>../x</code> could escape the uploads folder. IDs are now restricted to a safe character
+        set, and the errors the API returns never include raw database messages.
       </li>
     </ul>
   </details>
@@ -500,6 +680,11 @@ footer{
       their daily admin from one to two hours down to a few minutes.
     </li>
     <li>
+      Opened that same system to AI agents through an MCP server with read tools and one draft-only write,
+      backed by a least-privilege database role and a human approval queue, then hosted it on Vercel so
+      anyone can connect their own Claude and try it.
+    </li>
+    <li>
       Stopped fabricated details from reaching customer documents by routing job ID, price, and customer
       email straight from the form to the PDF instead of through the model, and added validation and
       fallbacks around the parts that stayed unreliable.
@@ -548,33 +733,90 @@ footer{
   Tyson Fitzgerald · Columbus, OH · <span id="year">2026</span>
 </footer>
 
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image" hidden>
+  <button type="button" class="close" aria-label="Close">close</button>
+  <img src="" alt="">
+  <figcaption></figcaption>
+</div>
+
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
-document.getElementById('copy').addEventListener('click', function () {
-  var btn = this;
-  var email = 'tfitzgerald779@gmail.com';
+function wireCopy(btn, text) {
+  btn.addEventListener('click', function () {
+    function done() {
+      btn.textContent = 'copied';
+      setTimeout(function () { btn.textContent = 'copy'; }, 1500);
+    }
 
-  function done() {
-    btn.textContent = 'copied';
-    setTimeout(function () { btn.textContent = 'copy'; }, 1500);
-  }
+    function fallback() {
+      var input = document.createElement('input');
+      input.value = text;
+      document.body.appendChild(input);
+      input.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      document.body.removeChild(input);
+    }
 
-  function fallback() {
-    var input = document.createElement('input');
-    input.value = email;
-    document.body.appendChild(input);
-    input.select();
-    try { document.execCommand('copy'); done(); } catch (e) {}
-    document.body.removeChild(input);
-  }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  });
+}
 
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(email).then(done, fallback);
-  } else {
-    fallback();
-  }
+wireCopy(document.getElementById('copy'), 'tfitzgerald779@gmail.com');
+document.querySelectorAll('button[data-copy]').forEach(function (btn) {
+  wireCopy(btn, btn.getAttribute('data-copy'));
 });
+
+/* ---------- lightbox ---------- */
+(function () {
+  var box = document.getElementById('lightbox');
+  var img = box.querySelector('img');
+  var cap = box.querySelector('figcaption');
+  var lastFocus = null;
+
+  function open(src, alt, caption) {
+    img.src = src;
+    img.alt = alt || '';
+    cap.textContent = caption || '';
+    box.hidden = false;
+    box.classList.add('open');
+    document.body.classList.add('no-scroll');
+    lastFocus = document.activeElement;
+    box.querySelector('.close').focus();
+  }
+
+  function close() {
+    box.classList.remove('open');
+    box.hidden = true;
+    img.src = '';
+    document.body.classList.remove('no-scroll');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  document.querySelectorAll('figure img').forEach(function (el) {
+    el.setAttribute('tabindex', '0');
+    el.setAttribute('role', 'button');
+    var fig = el.closest('figure');
+    var caption = fig && fig.querySelector('figcaption') ? fig.querySelector('figcaption').textContent : '';
+    function go() { open(el.currentSrc || el.src, el.alt, caption); }
+    el.addEventListener('click', go);
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
+    });
+  });
+
+  box.addEventListener('click', function (e) {
+    if (e.target !== img) close();
+  });
+  box.querySelector('.close').addEventListener('click', close);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && box.classList.contains('open')) close();
+  });
+})();
 </script>
 
 </body>
