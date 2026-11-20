@@ -390,9 +390,9 @@ footer{
 
 <section class="intro">
   <p>
-    I build automation and backend systems that use LLM APIs. Most of that work has been for small
-    businesses with one specific job they wanted taken off their plate: a field services company drowning
-    in end-of-day paperwork, a bookkeeper typing invoices into a spreadsheet by hand. More recently I've
+    I build automation and backend systems that use LLM APIs. Most of it targets one specific job a small
+    business would want taken off its plate, like end-of-day field service paperwork or typing invoices
+    into a spreadsheet by hand. More recently I've
     been writing automated tests that check whether AI-generated code actually works.
   </p>
   <p>
@@ -410,7 +410,7 @@ footer{
   <span class="num">01</span>
   <h3>Field Dispatch Pipeline, Made Usable by Agents</h3>
   <p class="meta">
-    Built for a field services client, then opened up to AI agents
+    Field service job automation, opened up to AI agents
     <span class="sep">·</span>
     <a href="https://field-dispatch-automation.vercel.app/" target="_blank" rel="noopener">Live portal</a>
     <span class="sep">·</span>
@@ -421,8 +421,8 @@ footer{
     A technician finishes a job and fills out one form on their phone: job ID, customer email, price,
     a few lines of notes, and photos. The server rewrites the notes into something a customer can read,
     puts it in a PDF, records the job in Postgres, and hands the PDF and photos to a Make.com scenario
-    that files them in Google Drive and emails the customer. The owner used to spend an hour or two every
-    evening doing this by hand. Now it takes about five minutes a day.
+    that files them in Google Drive and emails the customer. Done by hand, that paperwork can take an hour
+    or two every evening. With the pipeline it's closer to five minutes a day.
   </p>
   <p>
     The second half is what I added on top. The job system is exposed to AI agents through an
@@ -458,7 +458,7 @@ footer{
     <p class="try-title">Try it with your own Claude</p>
     <p>
       The tools are served over HTTP, so you can connect from Claude.ai, Claude Desktop, or Claude Code
-      without installing anything. The data is seeded demo data, not the client's customers. This is a
+      without installing anything. The data is seeded demo data, not real customers. This is a
       public demo token; anything you draft shows up in my review queue and goes nowhere until I approve it.
     </p>
     <figure class="single">
@@ -610,7 +610,7 @@ footer{
   <p>
     Upload a photo or scan of an invoice and it comes back as a spreadsheet row: vendor, invoice date, due
     date, tax, and total. The browser converts the file, a serverless function sends it to GPT-4o, and the
-    result gets appended to the client's Google Sheet.
+    result gets appended to a Google Sheet.
   </p>
   <p>
     The interesting part isn't the extraction, which mostly just works. It's everything I do to the answer
@@ -676,8 +676,9 @@ footer{
   <p class="meta"><span class="dates">JAN 2024 — PRESENT</span> · Columbus, OH</p>
   <ul>
     <li>
-      Built and shipped the job completion pipeline described above for a field services client, cutting
-      their daily admin from one to two hours down to a few minutes.
+      Built and deployed the job completion pipeline described above, which turns one technician form into
+      a customer-ready PDF, a database record, and an emailed copy, so end-of-day paperwork takes minutes
+      instead of hours.
     </li>
     <li>
       Opened that same system to AI agents through an MCP server with read tools and one draft-only write,
@@ -690,10 +691,10 @@ footer{
       fallbacks around the parts that stayed unreliable.
     </li>
     <li>
-      Scoped, priced, and delivered custom automation for several small business clients, which mostly meant
-      translating what someone described in plain English into something that runs.
+      Designed each project by starting from a manual process described in plain English and turning it
+      into something that runs.
     </li>
-    <li>Connected LLM APIs to the SaaS tools and databases clients were already using.</li>
+    <li>Connected LLM APIs to SaaS tools and databases including Google Drive, Google Sheets, Gmail, Make.com, and PostgreSQL.</li>
   </ul>
 </div>
 
